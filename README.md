@@ -10,7 +10,8 @@
   - I want a simple, clean and easy to read website 
   
   #ERD:
-  ![Screen Shot 2022-04-30 at 10 00 52 AM](https://user-images.githubusercontent.com/94028875/166120056-48901536-86c3-49ec-9629-00c7b742a8dc.png)
+  ![Screen Shot 2022-04-30 at 1 24 51 PM](https://user-images.githubusercontent.com/93102224/166121498-f4735abb-0eea-4a30-973c-8ec8def5cb0b.png)
+
 
    #Wireframe:
  ![Screen Shot 2022-04-30 at 12 21 12 PM](https://user-images.githubusercontent.com/94028875/166119912-f87c95e8-7862-41a4-a886-a55be5c6882b.png)
