@@ -10,10 +10,17 @@
   - I want a simple, clean and easy to read website 
   
   #ERD:
-  ![Screen Shot 2022-04-30 at 10 00 52 AM](https://user-images.githubusercontent.com/94028875/166115176-25c8a2b5-a1b0-4150-83d3-8d70cbdeeda8.png)
+  ![Screen Shot 2022-04-30 at 10 00 52 AM](https://user-images.githubusercontent.com/94028875/166115176-25c8a2b5-a1b0-4150-83d3-8d70cbdeeda8.pn
   
-  #Wireframe:
-  
+   #Wireframe:
+  ![Screen Shot 2022-04-30 at 12 23 04 PM](https://user-images.githubusercontent.com/94028875/166119875-8a4b3171-90c8-4d55-9b79-7581625c3d96.png)
+g)
+  ![Screen Shot 2022-04-30 at 12 22 29 PM](https://user-images.githubusercontent.com/94028875/166119872-e336387b-7905-4370-9ace-71d78fe70a54.png)
+
+  ![Screen Shot 2022-04-30 at 12 22 15 PM](https://user-images.githubusercontent.com/94028875/166119868-dba17b39-04cf-41d5-9fd6-dfc6dac51033.png)
+
+  ![Screen Shot 2022-04-30 at 12 21 12 PM](https://user-images.githubusercontent.com/94028875/166119865-c25c1ce3-a36b-4fca-b6e4-1b2fad94eb5b.png)
+
 ![Screen Shot 2022-04-30 at 12 22 47 PM](https://user-images.githubusercontent.com/94028875/166119817-0e238253-e71a-497e-accc-da45f9dc0db8.png)
 ![Screen Shot 2022-04-30 at 12 22 53 PM](https://user-images.githubusercontent.com/94028875/166119826-1dc8aad0-3efa-48a9-9643-2940155bb131.png)
 ![Screen Shot 2022-04-30 at 12 23 04 PM](https://user-images.githubusercontent.com/94028875/166119827-1b020710-73b4-4295-a6f1-118b74cb2bf5.png)
