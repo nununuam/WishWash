@@ -30,26 +30,26 @@ class Books(TemplateView):
 class Broadways(TemplateView):
     template_name = "broadways.html"
 
-class CreateList(TemplateView):
+class CreateList(LoginRequiredMixin, CreateView):
     template_name = "createList.html"
 
-class EditDeleteList(TemplateView):
+class EditDeleteList(UpdateView, DeleteView):
     template_name = "editDeleteList.html"
+
+class DetailListPage(DetailView):
+    template_name = "detailList.html"
+
+class DetailBookPage(DetailView):
+    template_name = "detailBook.html"
+
+class DetailBroadwayPage(DetailView):
+    template_name = "detailBroadway.html"
+
+class DetailMoviePage(DetailView):
+    template_name = "detailMovie.html"
 
 def Profile(request, username):
     template_name = "profile.html"
-
-class DetailListPage(TemplateView):
-    template_name = "detailList.html"
-
-class DetailBookPage(TemplateView):
-    template_name = "detailBook.html"
-
-class DetailBroadwayPage(TemplateView):
-    template_name = "detailBroadway.html"
-
-class DetailMoviePage(TemplateView):
-    template_name = "detailMovie.html"
-
+    
 def Signup(request):
     template_name = "signup.html"
