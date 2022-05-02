@@ -1,21 +1,7 @@
-from django.shortcuts import render
-from django.views import View 
-from django.http import HttpResponse 
-from django.views.generic.base import TemplateView
-from .models import Task, Categories
-from django.views import View
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect 
-from django.views.generic.base import TemplateView
-from django.contrib.auth.models import User
-from django.views.generic import DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.urls import reverse
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import path
+from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.Home.as_view(), name="home"), 
