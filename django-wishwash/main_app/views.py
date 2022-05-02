@@ -17,6 +17,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
+from .models import List
 
 class Home(TemplateView):
     template_name = "home.html"
@@ -49,7 +50,20 @@ class DetailMoviePage(DetailView):
     template_name = "detailMovie.html"
 
 def Profile(request, username):
-    template_name = "profile.html"
+    user = User.objects.get(username=username)
+    list = List.objects.all()
+    return render(request, 'profile.html',{'username':username, 'list':list})
     
 def Signup(request):
-    template_name = "signup.html"
+    if(request.method == 'POST'):
+        form = UserCreationForm(request.POST)
+        if(form.is_valid()):
+            user = form.save()
+            login(request, user)
+            print('Hello', user.username)
+            return HttpResponseRedirect('/user/' + str(user.username))
+        else:
+            return render(request, 'signup.html', {'form': form})
+    else:
+        form = UserCreationForm()
+        return render(request, 'signup.html', {'form': form})
