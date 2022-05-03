@@ -18,6 +18,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 from .models import List
+import requests
 
 class Home(TemplateView):
     template_name = "home.html"
