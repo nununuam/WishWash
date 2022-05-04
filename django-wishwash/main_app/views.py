@@ -19,12 +19,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 from .models import List
 import requests
+import json
 
 class Home(TemplateView):
     template_name = "home.html"
 
 class Movies(TemplateView):
     template_name = "movies.html"
+    response = requests.get("https://imdb-api.com/en/API/Top250Movies/k_lblhnjr6")
+    print(response.status_code)
+    print(response.json())
+    def jprint(obj):
+        text = json.dumps(obj, sort_keys=True, indent=4)
+        print(text)
+    jprint(response.json())
 
 class Books(TemplateView):
     template_name = "books.html"
