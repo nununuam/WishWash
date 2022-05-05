@@ -20,4 +20,16 @@
     <button onclick="getBooks()">Get Book</button>
     <br>
     <div id='output'></div>
+
+    {% for book in books %}
+        <div>
+            <a href="{% url 'detailBook' book.pk %}">
+                <h3>{{book.title}}</h3>
+            </a>
+            <h5>{{book.img}}</h5>
+            <h5>{{book.author}}</h5>
+            <h5>{{book.genre}}</h5>
+            <h5>{{book.preview}}</h5>
+        </div>
+    {% endfor %}
 {% endblock %}

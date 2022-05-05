@@ -3,10 +3,16 @@
 
 {% block content %}
     <h1>Movies Page</h1>
-    <form>
+    {% for movie in movies %}
         <div>
-            <input type ='text' name='moviename' placeholder='Movie Name'/>
-            <input type = 'submit' value='Search'/>
+            <a href="{% url 'detailMovie' movie.pk %}">
+                <h3>{{movie.title}}</h3>
+            </a>
+            <h5>{{movie.img}}</h5>
+            <h5>{{movie.cast}}</h5>
+            <h5>{{movie.trailer}}</h5>
+            <h5>{{movie.book}}</h5>
+            <h5>{{movie.plays}}</h5>
         </div>
-    </form>
+    {% endfor %}
 {% endblock %}

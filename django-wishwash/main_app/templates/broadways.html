@@ -3,4 +3,16 @@
 
 {% block content %}
     <h1>Broadways Page</h1>
+    {% for play in plays %}
+    <div>
+        <a href="{% url 'detailBroadway' play.pk %}">
+            <h3>{{play.title}}</h3>
+        </a>
+        <h5>{{play.img}}</h5>
+        <h5>{{play.director}}</h5>
+        <h5>{{play.cast}}</h5>
+        <h5>{{play.book}}</h5>
+        <h5>{{play.movie}}</h5>
+    </div>
+{% endfor %}
 {% endblock %}
