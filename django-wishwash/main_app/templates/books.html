@@ -4,5 +4,36 @@
 {% block content %}
     <h1>Books Page</h1>
     <h2>{{header}}</h2>
+    <script>
+        function getBooks(){
+            document.getElementById('output').innerHTML = "";
+            fetch('http://openlibrary.org/search.json?title='+document.getElementById('input').value)
+            .then(response => response.json())
+            .then(data => {
+                for(let i = 0; i< data.docs.length; i ++){
+                    document.getElementById('output').innerHTML+=
+                    "<h2>"+data.docs[i].title+"</h2>"
+                    + 'more info'+ "<br>"+ data.docs[i].author_name[0]+
+                    "<br><img src ='https://covers.openlibrary.org/b/id/"+ data.docs[i].cover_i+"-M.jpg'><br>";
+                }
+            });
+        }
+    </script>
+    {% for book in books %}
+        <img src = "{{book.img}}"/>
+        <a class='detailLink' href ="{% url 'detailBook' book.pk %}">Name: {{ book.name }}</a>
+    {% endfor %}
+    <form>
+        <div>
+            <input type ='text' name='name' placeholder='Book Name'/>
+            <input type = 'submit' value='Search'/>
+        </div>
+    </form>
+    
+    <input id = 'input'>
+    <button onclick="getBooks()">Get Book</button>
+    <br>
+    <div id='output'></div>
+    <a href = #>Hi</a>
     
 {% endblock %}
