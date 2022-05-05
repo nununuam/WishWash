@@ -92,6 +92,15 @@ class DetailBroadwayPage(DetailView):
 class DetailMoviePage(DetailView):
     template_name = "detailMovie.html"
 
+class AddBook(CreateView):
+    template_name = "addbook.html"
+
+class AddMovie(CreateView):
+    template_name = "addmovie.html"
+
+class AddPlay(CreateView):
+    template_name = "addplay.html"
+
 def Profile(request, username):
     user = User.objects.get(username=username)
     list = List.objects.all()
