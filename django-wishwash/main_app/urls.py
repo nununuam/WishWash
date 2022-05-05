@@ -18,6 +18,10 @@ urlpatterns = [
     path('broadways/<int:pk>', views.DetailBroadwayPage.as_view(), name="detailBroadway"),
     path('movies/<int:pk>', views.DetailMoviePage.as_view(), name="detailMovie"),
     
+    path('addbook/', views.AddBook.as_view(), name="addbook"),
+    path('addmovie/', views.AddMovie.as_view(), name="addmovie"),
+    path('addplay/', views.AddPlay.as_view(), name="addplay"),
+
     path('user/<username>', views.Profile, name="profile"),
     path('accounts/signup/', views.Signup, name='signup'),
 ]
