@@ -1,5 +1,4 @@
 #from .models import (models name here)
-from calendar import c
 from django.views import View
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, response 
@@ -34,18 +33,16 @@ class Movies(TemplateView):
 
 class Books(TemplateView):
     template_name = "books.html"
-    
-    # url = 'http://openlibrary.org/search.json?'
-    # response = requests.get(url)
-    # data = response.text
-    # parse_json = json.loads(data)
-    # # print(response.status_code)
-    
-    # print(data)
-
-        
-
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        name = self.request.GET.get('name')
+        if name != None:
+            context['books'] = Book.objects.filter(name__icontains=name)
+            context['header'] = f'Searching for {name}'
+        else:
+            context['books'] = Book.objects.all()
+            context['header'] = 'All Books'
+        return context
 
 class Broadways(TemplateView):
     template_name = "broadways.html"
@@ -60,6 +57,7 @@ class DetailListPage(DetailView):
     template_name = "detailList.html"
 
 class DetailBookPage(DetailView):
+    model = Book
     template_name = "detailBook.html"
 
 class DetailBroadwayPage(DetailView):
