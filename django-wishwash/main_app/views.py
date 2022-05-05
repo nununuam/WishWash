@@ -1,5 +1,5 @@
 #from .models import (models name here)
-from calendar import c
+#from calendar import calender
 from django.views import View
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, response 
@@ -23,25 +23,46 @@ class Home(TemplateView):
     response = requests.get("https://imdb-api.com/en/API/Top250Movies/k_lblhnjr6")
     #print(response.status_code)
     #print(response.json())
-    def jprint(obj):
-        text = json.dumps(obj, sort_keys=True, indent=4)
-        print(text)
-        return text
-    jprint(response.json())
-    print(response.json()[249])
+    #def jprint(obj):
+     #   text = json.dumps(obj, sort_keys=True, indent=4)
+      #  print(text)
+       # return text
+    #jprint(response.json())
 
-    def gprint(text):
-        array1 = text[1]
-        print(array1 + "hello")
+    #def gprint(text):
+     #   array1 = text[1]
+      #  print(array1 + "hello")
 
 class Movies(TemplateView):
     template_name = "movies.html"
+#API testing codes below
+    #def get_context_data(self, **kwargs):
+        #context = super().get_context_data(**kwargs)
+        #name = self.request.GET.get('moviename')
+        #if name != None:
+        #print(name)
+        #response = requests.get(f'https://imdb-api.com/en/API/Search/k_lblhnjr6/{name}')
+        #print(response.status_code)
+        #print(response.json())
+        #def jprint(obj):
+            #text = json.dumps(obj, sort_keys=True, indent=4)
+            #print(text)
+            #return text
+        #jprint(response.json())
+        #with open(response.json()) as response:
+            #data = json.load(response)
+            #print(data)
+           # context['movies'] = response.json()
+            #context['header'] = f'Searching for {name}'
+        #else:
+         #   response2 = requests.get("https://imdb-api.com/en/API/Top250Movies/k_lblhnjr6")
+          #  context['movies'] = response2.json()
+           # context['header'] = 'Top 250 Movies'
+        #return context
     
-
-
 class Books(TemplateView):
     template_name = "books.html"
-    
+#APIs Testing code below
     # url = 'http://openlibrary.org/search.json?'
     # response = requests.get(url)
     # data = response.text
@@ -49,10 +70,6 @@ class Books(TemplateView):
     # # print(response.status_code)
     
     # print(data)
-
-        
-
-
 
 class Broadways(TemplateView):
     template_name = "broadways.html"
