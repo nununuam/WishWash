@@ -1,4 +1,4 @@
-#from .models import (models name here)
+from .models import Book, Movie, Play
 #from calendar import calender
 from django.views import View
 from django.shortcuts import render
@@ -92,14 +92,35 @@ class DetailBroadwayPage(DetailView):
 class DetailMoviePage(DetailView):
     template_name = "detailMovie.html"
 
-class AddBook(CreateView):
+class AddBook(LoginRequiredMixin, CreateView):
     template_name = "addbook.html"
+    model = Book
+    fields = ['title', 'img', 'author', 'genre', 'preview']
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect('/')
 
 class AddMovie(CreateView):
     template_name = "addmovie.html"
+    model = Movie
+    fields = ['title', 'img', 'cast', 'trailer', 'book', 'plays']
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect('/')
 
 class AddPlay(CreateView):
-    template_name = "addplay.html"
+    template_name = "addplay.html" 
+    model = Play
+    fields = ['title', 'img', 'director', 'cast', 'book', 'movie']
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect('/')
 
 def Profile(request, username):
     user = User.objects.get(username=username)
