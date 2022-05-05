@@ -35,6 +35,12 @@ class Home(TemplateView):
 
 class Movies(TemplateView):
     template_name = "movies.html"
+    def get_context_data(self, **kwargs):
+         context = super().get_context_data(**kwargs)
+         title = self.request.GET.get("title")
+         context["movies"] = Movie.objects.all()
+         return context
+
 #API testing codes below
     #def get_context_data(self, **kwargs):
         #context = super().get_context_data(**kwargs)
@@ -59,6 +65,7 @@ class Movies(TemplateView):
           #  context['movies'] = response2.json()
            # context['header'] = 'Top 250 Movies'
         #return context
+        
     
 class Books(TemplateView):
     template_name = "books.html"
@@ -85,12 +92,15 @@ class DetailListPage(DetailView):
 
 class DetailBookPage(DetailView):
     template_name = "detailBook.html"
+    model = Book
 
 class DetailBroadwayPage(DetailView):
     template_name = "detailBroadway.html"
+    model = Play
 
 class DetailMoviePage(DetailView):
     template_name = "detailMovie.html"
+    model = Movie
 
 class AddBook(LoginRequiredMixin, CreateView):
     template_name = "addbook.html"
