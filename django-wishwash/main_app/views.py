@@ -69,6 +69,11 @@ class Movies(TemplateView):
     
 class Books(TemplateView):
     template_name = "books.html"
+    def get_context_data(self, **kwargs):
+         context = super().get_context_data(**kwargs)
+         title = self.request.GET.get("title")
+         context["books"] = Book.objects.all()
+         return context
 #APIs Testing code below
     # url = 'http://openlibrary.org/search.json?'
     # response = requests.get(url)
@@ -80,6 +85,11 @@ class Books(TemplateView):
 
 class Broadways(TemplateView):
     template_name = "broadways.html"
+    def get_context_data(self, **kwargs):
+         context = super().get_context_data(**kwargs)
+         title = self.request.GET.get("title")
+         context["plays"] = Play.objects.all()
+         return context
 
 class CreateList(LoginRequiredMixin, CreateView):
     template_name = "createList.html"
