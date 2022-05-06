@@ -28,7 +28,7 @@
             <a href="{% url 'detailBook' book.pk %}">
                 <h3>{{book.title}}</h3>
             </a>
-            <h5>{{book.img}}</h5>
-            <h5>{{book.author}}</h5>
+            <img  style = "max-width:50px" src = "{{book.img}}"/>
+            <h5>Author: {{book.author}}</h5>
     {% endfor %}
 {% endblock %}
