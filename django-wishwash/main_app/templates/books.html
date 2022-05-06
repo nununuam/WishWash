@@ -4,7 +4,7 @@
 {% block content %}
     <h1>Books Page</h1>
     <h2>{{header}}</h2>
-    <script>
+    <!-- <script>
         function getBooks(){
             document.getElementById('output').innerHTML = "";
             fetch('http://openlibrary.org/search.json?q='+document.getElementById('input').value)
@@ -21,15 +21,14 @@
     <br>
     <div id='output'></div>
 
-    {% for book in books %}
+    
+        </div> -->
+        {% for book in books %}
         <div>
             <a href="{% url 'detailBook' book.pk %}">
                 <h3>{{book.title}}</h3>
             </a>
             <h5>{{book.img}}</h5>
             <h5>{{book.author}}</h5>
-            <h5>{{book.genre}}</h5>
-            <h5>{{book.preview}}</h5>
-        </div>
     {% endfor %}
 {% endblock %}
