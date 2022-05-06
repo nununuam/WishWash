@@ -69,11 +69,17 @@ class Movies(TemplateView):
     
 class Books(TemplateView):
     template_name = "books.html"
+    
     def get_context_data(self, **kwargs):
-         context = super().get_context_data(**kwargs)
-         title = self.request.GET.get("title")
-         context["books"] = Book.objects.all()
-         return context
+        context = super().get_context_data(**kwargs)
+        name = self.request.GET.get('title')
+        if name != None:
+            context['books'] = Book.objects.filter(name__icontains=name)
+            context['header'] = f'Searching for {name}'
+        else:
+            context['books'] = Book.objects.all()
+            context['header'] = 'All Books'
+        return context
 #APIs Testing code below
     # url = 'http://openlibrary.org/search.json?'
     # response = requests.get(url)
@@ -120,7 +126,7 @@ class AddBook(LoginRequiredMixin, CreateView):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/books')
 
 class AddMovie(CreateView):
     template_name = "addmovie.html"
@@ -130,7 +136,7 @@ class AddMovie(CreateView):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/movies')
 
 class AddPlay(CreateView):
     template_name = "addplay.html" 
@@ -140,7 +146,7 @@ class AddPlay(CreateView):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/broadways')
 
 def Profile(request, username):
     user = User.objects.get(username=username)

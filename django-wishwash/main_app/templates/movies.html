@@ -3,12 +3,18 @@
 
 {% block content %}
     <h1>Movies Page</h1>
+    <form>
+        <div>
+            <input type ='text' name='name' placeholder='Movie Title'/>
+            <input type = 'submit' value='Search'/>
+        </div>
+    </form>
     {% for movie in movies %}
         <div>
             <a href="{% url 'detailMovie' movie.pk %}">
                 <h3>{{movie.title}}</h3>
             </a>
-            <h5>{{movie.img}}</h5>
+            <img  style = "max-width:50px" src = "{{movie.img}}"/>
             <h5>{{movie.cast}}</h5>
             <h5>{{movie.trailer}}</h5>
             <h5>{{movie.book}}</h5>
