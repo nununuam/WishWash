@@ -37,8 +37,8 @@ class Book(models.Model):
     author = models.CharField(max_length=250)
     genre = models.CharField(max_length=250)
     preview = models.CharField(max_length=1000)
-    movies = models.ManyToManyField(Movie)
-    plays = models.ManyToManyField(Play)
+    movies = models.ManyToManyField(Movie, null=True, default='none')
+    plays = models.ManyToManyField(Play, null= True, default='none')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
