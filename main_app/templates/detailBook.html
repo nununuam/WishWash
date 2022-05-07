@@ -9,6 +9,22 @@
         <h5>{{book.author}}</h5>
         <h5>{{book.genre}}</h5>
         <h5>{{book.preview}}</h5>
+        <h4>Movies</h4>
+        <ul class = 'ul'>
+            {% for movie in book.movies.all %}
+                <li>{{movie.name}}</li>
+            {% empty %}
+                <div>No movie</div>
+            {% endfor %}
+        </ul>
+        <h4>Plays</h4>
+        <ul class = 'ul'>
+            {% for play in book.plays.all %}
+                <li>{{play.name}}</li>
+            {% empty %}
+                <div>No play</div>
+            {% endfor %}
+        </ul>
     </div>
     <div>
         <span class = "spanbuttons"><a href="{% url 'bookedit' book.pk %}">Edit Task</a></span>
