@@ -21,6 +21,7 @@ import json
 class Home(TemplateView):
     template_name = "home.html"
     response = requests.get("https://imdb-api.com/en/API/Top250Movies/k_lblhnjr6")
+    #
     #print(response.status_code)
     #print(response.json())
     #def jprint(obj):
@@ -100,8 +101,10 @@ class Broadways(TemplateView):
 class CreateList(LoginRequiredMixin, CreateView):
     template_name = "createList.html"
 
-class EditDeleteList(UpdateView, DeleteView):
+class EditList(UpdateView):
     template_name = "editDeleteList.html"
+
+# class delete list
 
 class DetailListPage(DetailView):
     template_name = "detailList.html"
