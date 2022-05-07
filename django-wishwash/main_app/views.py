@@ -148,6 +148,45 @@ class AddPlay(CreateView):
         self.object.save()
         return HttpResponseRedirect('/broadways')
 
+class MovieDelete(DeleteView):
+    model = Movie
+    template_name = 'moviedelete.html'
+    success_url = "/movies/"
+
+class BookDelete(DeleteView):
+    model = Book
+    template_name = 'bookdelete.html'
+    success_url = "/books/"
+
+class BroadwayDelete(DeleteView):
+    model = Play
+    template_name = 'broadwaydelete.html'
+    success_url = "/broadways/"
+
+class MovieEdit(UpdateView):
+    template_name = "movieedit.html"
+    model = Movie
+    fields = ['title', 'img', 'cast', 'trailer', 'book', 'plays']
+
+    def get_success_url(self):
+        return reverse('detailMovie', kwargs={'pk': self.object.pk})
+
+class BookEdit(UpdateView):
+    template_name = "bookedit.html"
+    model = Book
+    fields = ['title', 'img', 'author', 'genre', 'preview']
+
+    def get_success_url(self):
+        return reverse('detailBook', kwargs={'pk': self.object.pk})
+
+class BroadwayEdit(UpdateView):
+    template_name = "broadwayedit.html"
+    model = Play
+    fields = ['title', 'img', 'director', 'cast', 'book', 'movie']
+
+    def get_success_url(self):
+        return reverse('detailBroadway', kwargs={'pk': self.object.pk})
+
 def Profile(request, username):
     user = User.objects.get(username=username)
     list = List.objects.all()
