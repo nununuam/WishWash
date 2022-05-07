@@ -11,7 +11,7 @@ urlpatterns = [
     path('broadways/', views.Broadways.as_view(), name="broadways"),
 
     path('createList/', views.CreateList.as_view(), name="createList"),
-    path('edit&deleteList/<int:pk>', views.EditDeleteList.as_view(), name="editDeleteList"),
+    # path('edit&deleteList/<int:pk>', views.EditDeleteList.as_view(), name="editDeleteList"),
 
     path('lists/<int:pk>', views.DetailListPage.as_view(), name="home"), 
     path('books/<int:pk>', views.DetailBookPage.as_view(), name="detailBook"),
