@@ -12,7 +12,7 @@
         <h4>Movies</h4>
         <ul class = 'ul'>
             {% for movie in book.movies.all %}
-                <li>{{movie.name}}</li>
+                <li>{{movie.title}}</li>
             {% empty %}
                 <div>No movie</div>
             {% endfor %}
@@ -20,7 +20,7 @@
         <h4>Plays</h4>
         <ul class = 'ul'>
             {% for play in book.plays.all %}
-                <li>{{play.name}}</li>
+                <li>{{play.title}}</li>
             {% empty %}
                 <div>No play</div>
             {% endfor %}
