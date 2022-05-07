@@ -3,7 +3,6 @@
 
 {% block content %}
     <h1>Books Page</h1>
-    <h2>{{header}}</h2>
     <!-- <script>
         function getBooks(){
             document.getElementById('output').innerHTML = "";
@@ -20,15 +19,19 @@
     <button onclick="getBooks()">Get Book</button>
     <br>
     <div id='output'></div>
-
-    
         </div> -->
+        <form>
+            <div>
+                <input type ='text' name='name' placeholder='Book Title'/>
+                <input type = 'submit' value='Search'/>
+            </div>
+        </form>
+        <h2>{{header}}</h2>
         {% for book in books %}
-        <div>
             <a href="{% url 'detailBook' book.pk %}">
                 <h3>{{book.title}}</h3>
             </a>
-            <h5>{{book.img}}</h5>
-            <h5>{{book.author}}</h5>
-    {% endfor %}
+            <img  style = "max-width:50px" src = "{{book.img}}"/>
+            <h5>Author: {{book.author}}</h5>
+        {% endfor %}
 {% endblock %}

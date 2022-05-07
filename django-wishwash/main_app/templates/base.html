@@ -12,9 +12,16 @@
         {% endblock %}
     </title>
   </head>
+  <header>
+    {% block header %}
+    {% endblock %}
+  </header>
   <body>
       <nav>
-
+        <a href = '/books/'>Books</a>
+        <a href = '/movies/'>Movies</a>
+        <a href = '/broadways/'>Broadways</a>
+        <a href = '/user/{{user.username}}'>Profile</a>
       </nav>
     {% block content %}  
     {% endblock %}
