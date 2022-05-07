@@ -22,6 +22,12 @@
         <a href = '/movies/'>Movies</a>
         <a href = '/broadways/'>Broadways</a>
         <a href = '/user/{{user.username}}'>Profile</a>
+        <a href="/accounts/logout/">Sign Out</a>
+        <a href= "{% url 'addbook' %}">Create Book</a>
+        <a href= "{% url 'addmovie' %}">Create Movie</a>
+        <a href= "{% url 'addplay' %}">Create Play</a>
+        
+
       </nav>
     {% block content %}  
     {% endblock %}

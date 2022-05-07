@@ -10,8 +10,10 @@ urlpatterns = [
     path('books/', views.Books.as_view(), name="books"),
     path('broadways/', views.Broadways.as_view(), name="broadways"),
 
-    path('createList/', views.CreateList.as_view(), name="createList"),
-    # path('edit&deleteList/<int:pk>', views.EditDeleteList.as_view(), name="editDeleteList"),
+    path('books/new/', views.AddBook.as_view(), name='addbook'),
+    path('movies/new/', views.AddMovie.as_view(), name='addmovie'),
+    path('broadways/new/', views.AddPlay.as_view(), name='addplay'),
+
 
     path('lists/<int:pk>', views.DetailListPage.as_view(), name="home"), 
     path('books/<int:pk>', views.DetailBookPage.as_view(), name="detailBook"),
