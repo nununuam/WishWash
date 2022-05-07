@@ -102,8 +102,8 @@ class Broadways(TemplateView):
 class CreateList(LoginRequiredMixin, CreateView):
     template_name = "createList.html"
 
-class EditList(UpdateView):
-    template_name = "editDeleteList.html"
+# class EditList(UpdateView):
+#     template_name = "editDeleteList.html"
 
 # class delete list
 
