@@ -192,7 +192,7 @@ class BroadwayDelete(DeleteView):
 class MovieEdit(UpdateView):
     template_name = "movieedit.html"
     model = Movie
-    fields = ['title', 'img', 'cast', 'trailer', 'book', 'plays']
+    fields = '__all__'
 
     def get_success_url(self):
         return reverse('detailMovie', kwargs={'pk': self.object.pk})
@@ -200,7 +200,7 @@ class MovieEdit(UpdateView):
 class BookEdit(UpdateView):
     template_name = "bookedit.html"
     model = Book
-    fields = ['title', 'img', 'author', 'genre', 'preview']
+    ffields = '__all__'
 
     def get_success_url(self):
         return reverse('detailBook', kwargs={'pk': self.object.pk})
@@ -208,7 +208,7 @@ class BookEdit(UpdateView):
 class BroadwayEdit(UpdateView):
     template_name = "broadwayedit.html"
     model = Play
-    fields = ['title', 'img', 'director', 'cast', 'book', 'movie']
+    fields = '__all__'
 
     def get_success_url(self):
         return reverse('detailBroadway', kwargs={'pk': self.object.pk})
