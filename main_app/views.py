@@ -1,3 +1,4 @@
+from dataclasses import field
 from .models import Book, Movie, Play
 #from calendar import calender
 from django.views import View
@@ -111,21 +112,33 @@ class DetailListPage(DetailView):
     template_name = "detailList.html"
 
 class DetailBookPage(DetailView):
-    template_name = "detailBook.html"
     model = Book
+    template_name = "detailBook.html"
 
+# def DetailBookPage(request, book_id):
+#     book = Book.objects.get(id=book_id)
+#     return render(request, 'detailBook.html', {'book':book})
+    
+
+# def DetailBroadwayPage(request, play_id):
+#     play = Play.objects.get(id=play_id)
+#     return render(request, 'detailBroadway.html', {'play':play})
+    
 class DetailBroadwayPage(DetailView):
-    template_name = "detailBroadway.html"
     model = Play
-
+    template_name = "detailBroadway.html"
+# def DetailMoviePage(request, movie_id):
+#     movie = Movie.objects.get(id=movie_id)
+#     return render(request, 'detailMovie.html', {'movie':movie})
 class DetailMoviePage(DetailView):
-    template_name = "detailMovie.html"
     model = Movie
+    template_name = "detailMovie.html"
+    
 
 class AddBook(LoginRequiredMixin, CreateView):
     template_name = "addbook.html"
     model = Book
-    fields = ['title', 'img', 'author', 'genre', 'preview']
+    fields = '__all__'
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
@@ -133,24 +146,33 @@ class AddBook(LoginRequiredMixin, CreateView):
         return HttpResponseRedirect('/books')
 
 class AddMovie(CreateView):
-    template_name = "addmovie.html"
+    # template_name = "addmovie.html"
+    # model = Movie
+    # fields = ['title', 'img', 'cast', 'trailer', 'book', 'plays']
+    # def form_valid(self, form):
+    #     self.object = form.save(commit=False)
+    #     self.object.user = self.request.user
+    #     self.object.save()
+    #     return HttpResponseRedirect('/movies')
+
     model = Movie
-    fields = ['title', 'img', 'cast', 'trailer', 'book', 'plays']
-    def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.user = self.request.user
-        self.object.save()
-        return HttpResponseRedirect('/movies')
+    fields = '__all__'
+    template_name = "addmovie.html"
+    success_url = '/movies/'
 
 class AddPlay(CreateView):
-    template_name = "addplay.html" 
+    # template_name = "addplay.html" 
+    # model = Play
+    # fields = ['title', 'img', 'director', 'cast', 'book', 'movie']
+    # def form_valid(self, form):
+    #     self.object = form.save(commit=False)
+    #     self.object.user = self.request.user
+    #     self.object.save()
+    #     return HttpResponseRedirect('/broadways')
     model = Play
-    fields = ['title', 'img', 'director', 'cast', 'book', 'movie']
-    def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.user = self.request.user
-        self.object.save()
-        return HttpResponseRedirect('/broadways')
+    fields = '__all__'
+    template_name = "addplay.html"
+    success_url = '/broadways/'
 
 class MovieDelete(DeleteView):
     model = Movie

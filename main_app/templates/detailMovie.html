@@ -9,8 +9,20 @@
             <img  style = "max-width:50px" src = "{{movie.img}}"/>
             <h5>{{movie.cast}}</h5>
             <h5>{{movie.trailer}}</h5>
-            <h5>{{movie.book}}</h5>
-            <h5>{{movie.plays}}</h5>
+            <ul class = 'ul'>
+                {% for book in movies.books.all %}
+                    <li>{{book.name}}</li>
+                {% empty %}
+                    <div>No book</div>
+                {% endfor %}
+            </ul>
+            <ul class = 'ul'>
+                {% for play in movies.plays.all %}
+                    <li>{{play.name}}</li>
+                {% empty %}
+                    <div>No play</div>
+                {% endfor %}
+            </ul>
         </div>
         <div>
             <span class = "spanbuttons"><a href="{% url 'movieedit' movie.pk %}">Edit Task</a></span>

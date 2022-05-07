@@ -8,8 +8,21 @@
         <img  style = "max-width:50px" src = "{{broadway.img}}"/>
         <h5>{{play.director}}</h5>
         <h5>{{play.cast}}</h5>
-        <h5>{{play.book}}</h5>
-        <h5>{{play.movie}}</h5>
+        <h4>Plays</h4>
+        <ul class = 'ul'>
+            {% for book in plays.books.all %}
+                <li>{{book.name}}</li>
+            {% empty %}
+                <div>No book</div>
+            {% endfor %}
+        </ul>
+        <ul class = 'ul'>
+            {% for movie in plays.movies.all %}
+                <li>{{movie.name}}</li>
+            {% empty %}
+                <div>No movie</div>
+            {% endfor %}
+        </ul>
     </div>
     <div>
         <span class = "spanbuttons"><a href="{% url 'broadwayedit' play.pk %}">Edit Task</a></span>
