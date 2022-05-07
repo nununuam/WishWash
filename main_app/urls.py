@@ -22,6 +22,14 @@ urlpatterns = [
     path('addmovie/', views.AddMovie.as_view(), name="addmovie"),
     path('addplay/', views.AddPlay.as_view(), name="addplay"),
 
+    path('book/<int:pk>/delete', views.BookDelete.as_view(), name="bookdelete"),
+    path('moive/<int:pk>/delete', views.MovieDelete.as_view(), name="moviedelete"),
+    path('broadway/<int:pk>/delete', views.BroadwayDelete.as_view(), name="broadwaydelete"),
+
+    path('book/<int:pk>/edit', views.BookEdit.as_view(), name="bookedit"),
+    path('moive/<int:pk>/edit', views.MovieEdit.as_view(), name="movieedit"),
+    path('broadway/<int:pk>/edit', views.BroadwayEdit.as_view(), name="broadwayedit"),
+
     path('user/<username>', views.Profile, name="profile"),
     path('accounts/signup/', views.Signup, name='signup'),
 ]

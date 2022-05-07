@@ -11,4 +11,8 @@
         <h5>{{play.book}}</h5>
         <h5>{{play.movie}}</h5>
     </div>
+    <div>
+        <span class = "spanbuttons"><a href="{% url 'broadwayedit' play.pk %}">Edit Task</a></span>
+        <span class = "spanbuttons"><a href="{% url 'broadwaydelete' play.pk %}">Delete Task</a></span>
+    </div>
 {% endblock %}

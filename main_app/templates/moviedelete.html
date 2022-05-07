@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content %}  
+    <h1>Are you sure you want to delete {{movie.title}}?</h1>
+    <form method="post">
+    {% csrf_token %}
+    <div>
+    <!-- confirm cat delete -->
+        <button>Confirm</button>
+        <!-- Redirect back to detail on cancel -->
+        <a href="{% url 'detailMovie' movie.pk %}">Cancel</a>
+    </div>
+    </form>
+{% endblock %}
