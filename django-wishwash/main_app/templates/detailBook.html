@@ -11,7 +11,7 @@
         <h5>{{book.preview}}</h5>
     </div>
     <div>
-        <span class = "spanbuttons"><a href="{% url 'taskUpdate' book.pk %}">Edit Task</a></span>
-        <span class = "spanbuttons"><a href="{% url 'taskDelete' book.pk %}">Delete Task</a></span>
+        <span class = "spanbuttons"><a href="{% url 'bookedit' book.pk %}">Edit Task</a></span>
+        <span class = "spanbuttons"><a href="{% url 'bookdelete' book.pk %}">Delete Task</a></span>
     </div>
 {% endblock %}
