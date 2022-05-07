@@ -200,7 +200,7 @@ class MovieEdit(UpdateView):
 class BookEdit(UpdateView):
     template_name = "bookedit.html"
     model = Book
-    ffields = '__all__'
+    fields = '__all__'
 
     def get_success_url(self):
         return reverse('detailBook', kwargs={'pk': self.object.pk})
