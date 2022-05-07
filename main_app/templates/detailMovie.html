@@ -10,15 +10,15 @@
             <h5>{{movie.cast}}</h5>
             <iframe width="560" height="315" src="{{movie.trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <ul class = 'ul'>
-                {% for book in movies.books.all %}
-                    <li>{{book.name}}</li>
+                {% for book in movie.book_set.all %}
+                    <li>{{book.title}}</li>
                 {% empty %}
                     <div>No book</div>
                 {% endfor %}
             </ul>
             <ul class = 'ul'>
-                {% for play in movies.plays.all %}
-                    <li>{{play.name}}</li>
+                {% for play in movie.play_set.all %}
+                    <li>{{play.title}}</li>
                 {% empty %}
                     <div>No play</div>
                 {% endfor %}
