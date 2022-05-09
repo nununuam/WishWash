@@ -1,5 +1,7 @@
 from dataclasses import field
+from pipes import Template
 from .models import Book, Movie, Play
+from .models import List as ListModel
 #from calendar import calender
 from django.views import View
 from django.shortcuts import render
@@ -90,7 +92,14 @@ class Books(TemplateView):
     # # print(response.status_code)
     
     # print(data)
-    
+
+class List(TemplateView):
+    template_name = 'list.html'
+    def get_context_data(self, **kwargs):
+         context = super().get_context_data(**kwargs)
+         title = self.request.GET.get("title")
+         context["lists"] = ListModel.objects.all()
+         return context
 
 class Broadways(TemplateView):
     template_name = "broadways.html"
@@ -102,6 +111,9 @@ class Broadways(TemplateView):
 
 class CreateList(LoginRequiredMixin, CreateView):
     template_name = "createList.html"
+    model = List
+    fields = '__all__'   
+    success_url = '/lists/'
 
 # class EditList(UpdateView):
 #     template_name = "editDeleteList.html"
@@ -215,7 +227,6 @@ class BroadwayEdit(UpdateView):
 
 def Profile(request, username):
     user = User.objects.get(username=username)
-    list = List.objects.all()
     return render(request, 'profile.html',{'username':username, 'list':list})
     
 def Signup(request):
@@ -231,3 +242,7 @@ def Signup(request):
     else:
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
+
+
+
+   

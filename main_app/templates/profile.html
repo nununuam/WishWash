@@ -4,9 +4,6 @@
 {% block content %}
     <h1>{{username}}'s collection: </h1>
     {% if username == user.username %}
-        <a href = "{% url 'createList' %}">Create new list</a>
+        <a href = "{% url 'createList' %}">Create List</a>
     {% endif %}
-    {% for list in lists %}
-        <h4>{{list.name}}</h4>
-    {% endfor %}
 {% endblock %}
