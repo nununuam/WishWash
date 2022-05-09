@@ -10,15 +10,15 @@
         <h5>{{play.cast}}</h5>
         <h4>Plays</h4>
         <ul class = 'ul'>
-            {% for book in plays.books.all %}
-                <li>{{book.name}}</li>
+            {% for book in play.book_set.all %}
+                <li>{{book.title}}</li>
             {% empty %}
                 <div>No book</div>
             {% endfor %}
         </ul>
         <ul class = 'ul'>
-            {% for movie in plays.movies.all %}
-                <li>{{movie.name}}</li>
+            {% for movie in play.movies.all %}
+                <li>{{movie.title}}</li>
             {% empty %}
                 <div>No movie</div>
             {% endfor %}

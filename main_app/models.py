@@ -24,6 +24,7 @@ class Play(models.Model):
     img = models.CharField(max_length=1000)
     director = models.CharField(max_length=250)
     cast = models.CharField(max_length=1000)
+    movies = models.ManyToManyField(Movie, blank=True)
 
     def __str__(self):
         return self.title
