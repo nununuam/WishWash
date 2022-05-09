@@ -120,7 +120,8 @@ class CreateList(LoginRequiredMixin, CreateView):
 
 # class delete list
 
-class DetailListPage(DetailView):
+class DetailList(DetailView):
+    model = List
     template_name = "detailList.html"
 
 class DetailBookPage(DetailView):

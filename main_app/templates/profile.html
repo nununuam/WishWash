@@ -6,7 +6,9 @@
     {% if username == user.username %}
         <a href = "{% url 'createList' %}">Create List</a>
     {% endif %}
-    {% for list in lists %}
-        <h4>Name: {{list.name}}</h4>
+    {% for list in lists %} 
+        <a href = "{% url 'detailList' list.pk %}"/>
+            <h4>Name: {{list.name}}</h4>
+        </a>
     {% endfor %}
 {% endblock %}
