@@ -1,12 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class List(models.Model):
-    name = models.CharField(max_length=250)
-
-    def __str__(self):
-        return self.name
-
 class Movie(models.Model):
     title = models.CharField(max_length=250)
     img = models.CharField(max_length=1000)
@@ -47,6 +41,16 @@ class Book(models.Model):
     
     class Meta:
         ordering = ['title']
+
+class List(models.Model):
+    name = models.CharField(max_length=250)
+    movies = models.ManyToManyField(Movie)
+    plays = models.ManyToManyField(Play)
+    books = models.ManyToManyField(Book)
+
+
+    def __str__(self):
+        return self.name
 
 
 

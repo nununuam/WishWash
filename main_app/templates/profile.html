@@ -2,5 +2,11 @@
 {% load static %}
 
 {% block content %}
-    <h1>Profile Page</h1>
+    <h1>{{username}}'s collection: </h1>
+    {% if username == user.username %}
+        <a href = "{% url 'createList' %}">Create new list</a>
+    {% endif %}
+    {% for list in lists %}
+        <h4>{{list.name}}</h4>
+    {% endfor %}
 {% endblock %}
