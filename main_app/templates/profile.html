@@ -6,4 +6,7 @@
     {% if username == user.username %}
         <a href = "{% url 'createList' %}">Create List</a>
     {% endif %}
+    {% for list in lists %}
+        <h4>Name: {{list.name}}</h4>
+    {% endfor %}
 {% endblock %}

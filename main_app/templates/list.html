@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block content %}
-    <h1>Lists Page</h1>
-    {% for list in lists %}
-        <h4>Name: {{list.name}}</h4>
-    {% endfor %}
-{% endblock %}
