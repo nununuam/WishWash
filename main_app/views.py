@@ -1,6 +1,6 @@
 from dataclasses import field
 from pipes import Template
-from .models import Book, Movie, Play
+from .models import Book, Movie, Play, List
 from .models import List as ListModel
 #from calendar import calender
 from django.views import View
@@ -93,7 +93,7 @@ class Books(TemplateView):
     
     # print(data)
 
-class List(TemplateView):
+class Lists(TemplateView):
     template_name = 'profile.html'
     def get_context_data(self, **kwargs):
          context = super().get_context_data(**kwargs)
@@ -113,7 +113,7 @@ class CreateList(LoginRequiredMixin, CreateView):
     template_name = "createList.html"
     model = List
     fields = '__all__'   
-    success_url = '/lists/'
+    success_url = '/user/<username>'
 
 # class EditList(UpdateView):
 #     template_name = "editDeleteList.html"
