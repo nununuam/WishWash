@@ -18,15 +18,20 @@
   </header>
   <body>
       <nav>
-        <a href = '/books/'>Books</a>
-        <a href = '/movies/'>Movies</a>
-        <a href = '/broadways/'>Broadways</a>
-        <a href = '/user/{{user.username}}'>Profile</a>
-        <a href="/accounts/logout/">Sign Out</a>
-        <a href= "{% url 'addbook' %}">Create Book</a>
-        <a href= "{% url 'addmovie' %}">Create Movie</a>
-        <a href= "{% url 'addplay' %}">Create Play</a>
-        
+        {% if user.is_authenticated %}
+          <a href = '/user/{{user.username}}'>Profile</a>
+          <a href="/accounts/logout/">Sign Out</a>
+          <a href= "{% url 'addbook' %}">Create Book</a>
+          <a href= "{% url 'addmovie' %}">Create Movie</a>
+          <a href= "{% url 'addplay' %}">Create Play</a>
+        {%else %}
+          <a href="{% url 'login' %}">Login</a>
+          <a href = '/books/'>Books</a>
+          <a href = '/movies/'>Movies</a>
+          <a href = '/broadways/'>Broadways</a>
+        {% endif %}
+        <a href="/">Home</a>
+        <a href="/admin">Admin</a>
 
       </nav>
     {% block content %}  
