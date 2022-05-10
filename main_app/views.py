@@ -112,18 +112,18 @@ class CreateList(LoginRequiredMixin, CreateView):
     template_name = "createList.html"
     model = List
     fields = '__all__'   
-    success_url = '/user/<username>'
+    success_url = '/user/{{user.username}}'
 
 class UpdateList(LoginRequiredMixin, UpdateView):
     model = List
     fields = '__all__'
     template_name = 'listUpdate.html'
-    success_url = "/user/<username>"
+    success_url = "/user/{{user.username}}"
 
 class DeleteList(LoginRequiredMixin, DeleteView):
     model = List
     template_name = 'listDelete.html'
-    success_url = "/user/<username>"
+    success_url = "/user/{{user.username}}"
 
 class DetailList(DetailView):
     model = List
