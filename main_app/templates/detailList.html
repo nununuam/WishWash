@@ -2,5 +2,45 @@
 {% load static %}
 
 {% block content %}
-    <h1>detail page for the Lists</h1>
+    <h1>{{list.name}}</h1>
+    <h3>Books:</h3>
+    <ul>
+        {% for book in list.books.all %}
+            <li>
+                <a href="{% url 'detailBook' book.pk %}">
+                    <h5>{{book.title}}</h5>
+                </a>
+            </li>
+        {% empty %}
+            <div>No Book</div>
+        {% endfor %}
+    </ul>
+    <h3>Movies:</h3>
+    <ul>
+        {% for movie in list.movies.all %}
+            <li>
+                <a href="{% url 'detailMovie' movie.pk %}">
+                    <h5>{{movie.title}}</h5>
+                </a>
+            </li>
+        {% empty %}
+            <div>No Movie</div>
+        {% endfor %}
+    </ul>
+    <h3>Plays:</h3>
+    <ul>
+        {% for play in list.plays.all %}
+            <li>
+                <a href="{% url 'detailBroadway' play.pk %}">
+                    <h5>{{play.title}}</h5>
+                </a>
+            </li>
+        {% empty %}
+            <div>No Play</div>
+        {% endfor %}
+    </ul>
+
+    <a href = "{% url 'listUpdate' list.pk %}">Edit</a>
+    <a href = "{% url 'listDelete' list.pk %}">Delete</a>
+
 {% endblock %}

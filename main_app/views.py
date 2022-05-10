@@ -1,5 +1,7 @@
 from dataclasses import field
-from .models import Book, Movie, Play
+from pipes import Template
+from .models import Book, Movie, Play, List
+from .models import List as ListModel
 #from calendar import calender
 from django.views import View
 from django.shortcuts import render
@@ -17,7 +19,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 from .models import List, Book
 import requests
-import json
 
 class Home(TemplateView):
     template_name = "home.html"
@@ -90,7 +91,14 @@ class Books(TemplateView):
     # # print(response.status_code)
     
     # print(data)
-    
+
+class Lists(TemplateView):
+    template_name = 'profile.html'
+    def get_context_data(self, **kwargs):
+         context = super().get_context_data(**kwargs)
+         title = self.request.GET.get("title")
+         context["lists"] = ListModel.objects.all()
+         return context
 
 class Broadways(TemplateView):
     template_name = "broadways.html"
@@ -102,13 +110,23 @@ class Broadways(TemplateView):
 
 class CreateList(LoginRequiredMixin, CreateView):
     template_name = "createList.html"
+    model = List
+    fields = '__all__'   
+    success_url = '/user/<username>'
 
-# class EditList(UpdateView):
-#     template_name = "editDeleteList.html"
+class UpdateList(LoginRequiredMixin, UpdateView):
+    model = List
+    fields = '__all__'
+    template_name = 'listUpdate.html'
+    success_url = "/user/<username>"
 
-# class delete list
+class DeleteList(LoginRequiredMixin, DeleteView):
+    model = List
+    template_name = 'listDelete.html'
+    success_url = "/user/<username>"
 
-class DetailListPage(DetailView):
+class DetailList(DetailView):
+    model = List
     template_name = "detailList.html"
 
 class DetailBookPage(DetailView):
@@ -215,7 +233,6 @@ class BroadwayEdit(UpdateView):
 
 def Profile(request, username):
     user = User.objects.get(username=username)
-    list = List.objects.all()
     return render(request, 'profile.html',{'username':username, 'list':list})
     
 def Signup(request):
@@ -231,3 +248,7 @@ def Signup(request):
     else:
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
+
+
+
+   

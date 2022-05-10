@@ -27,7 +27,11 @@ urlpatterns = [
     path('broadway/<int:pk>/delete', views.BroadwayDelete.as_view(), name="broadwaydelete"),
     path('broadway/<int:pk>/edit', views.BroadwayEdit.as_view(), name="broadwayedit"),
 
-    path('lists/<int:pk>', views.DetailListPage.as_view(), name="home"), 
+    path('user/<username>', views.Lists.as_view(), name='lists'),
+    path('lists/new/', views.CreateList.as_view(), name='createList'),
+    path('lists/<int:pk>', views.DetailList.as_view(), name="detailList"),
+    path('lists/<int:pk>/update', views.UpdateList.as_view(), name='listUpdate'),
+    path('lists/<int:pk>/delete', views.DeleteList.as_view(), name='listDelete'),
 
     path('user/<username>', views.Profile, name="profile"),
     path('accounts/signup/', views.Signup, name='signup'),
