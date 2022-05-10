@@ -19,7 +19,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 from .models import List, Book
 import requests
-import json
 
 class Home(TemplateView):
     template_name = "home.html"

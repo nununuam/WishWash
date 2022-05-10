@@ -44,9 +44,9 @@ class Book(models.Model):
 
 class List(models.Model):
     name = models.CharField(max_length=250)
-    movies = models.ManyToManyField(Movie)
-    plays = models.ManyToManyField(Play)
-    books = models.ManyToManyField(Book)
+    movies = models.ManyToManyField(Movie, blank=True)
+    plays = models.ManyToManyField(Play, blank=True)
+    books = models.ManyToManyField(Book, blank=True)
 
 
     def __str__(self):
