@@ -3,4 +3,15 @@
 
 {% block content %}
     <h1>{{list.name}}</h1>
+    <ul>
+        {% for book in list.books.all %}
+            <li>{{book.title}}</li>
+        {% empty %}
+            <div>No Book</div>
+        {% endfor %}
+    </ul>
+
+    <a href = "{% url 'listUpdate' list.pk %}">Edit</a>
+    <a href = "{% url 'listDelete' list.pk %}">Delete</a>
+
 {% endblock %}
