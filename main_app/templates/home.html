@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-    <div class = 'home'>
+    <div class='home'>
         <h1>Books</h1>
             {% for book in books %}
-            <a href="{% url 'detailBook' book.pk %}">
-                <img  style = "max-width:50px" src = "{{book.img}}"/>
-            </a>
+                <a href="{% url 'detailBook' book.pk %}">
+                    <img  style = "max-width:50px" src = "{{book.img}}"/>
+                </a>
             {% endfor %}
         <h1>Movies</h1>
             {% for movie in movies %}
