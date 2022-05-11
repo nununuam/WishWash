@@ -23,6 +23,14 @@ import requests
 class Home(TemplateView):
     template_name = "home.html"
     response = requests.get("https://imdb-api.com/en/API/Top250Movies/k_lblhnjr6")
+    def get_context_data(self, **kwargs):
+         context = super().get_context_data(**kwargs)
+         title = self.request.GET.get("title")
+         context["books"] = Book.objects.all()
+         context["movies"] = Movie.objects.all()
+         context["plays"] = Play.objects.all()
+         return context
+
     #
     #print(response.status_code)
     #print(response.json())

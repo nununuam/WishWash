@@ -13,22 +13,21 @@
     </title>
   </head>
   <header>
-    {% block header %}
-    {% endblock %}
+    <div class = nav_bar>
+      {% block header %}
+      <h5>WishWash</h5>
+      <a href = '/books/'>Books</a>
+      <a href = '/movies/'>Movies</a>
+      <a href = '/broadways/'>Broadways</a>
+      <a href = '/user/{{user.username}}'>Profile</a>
+      <a href="/accounts/logout/">Sign Out</a>
+      <a href= "{% url 'addbook' %}">Create Book</a>
+      <a href= "{% url 'addmovie' %}">Create Movie</a>
+      <a href= "{% url 'addplay' %}">Create Play</a>
+      {% endblock %}
+    </div>  
   </header>
   <body>
-      <nav>
-        <a href = '/books/'>Books</a>
-        <a href = '/movies/'>Movies</a>
-        <a href = '/broadways/'>Broadways</a>
-        <a href = '/user/{{user.username}}'>Profile</a>
-        <a href="/accounts/logout/">Sign Out</a>
-        <a href= "{% url 'addbook' %}">Create Book</a>
-        <a href= "{% url 'addmovie' %}">Create Movie</a>
-        <a href= "{% url 'addplay' %}">Create Play</a>
-        
-
-      </nav>
     {% block content %}  
     {% endblock %}
   </body>
