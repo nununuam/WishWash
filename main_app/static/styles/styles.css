@@ -1,6 +1,28 @@
+a {
+    color: #FCEDED;
+}
+
 body {
+
     background-color: rgb(80, 34, 34);
     color: rgb(255, 242, 242);
+}
+
+.create {
+    text-align: center;
+    margin-top: 30px;
+}
+.creatediv {
+    display: inline-block;
+    text-align: left;
+}
+.createh1{
+    margin-bottom: 30px;
+}
+button {
+    background-color: #FCEDED;
+}
+
 }
 
  .nav_bar a{
