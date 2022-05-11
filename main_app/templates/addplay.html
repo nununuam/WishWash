@@ -3,14 +3,16 @@
 
 {% block content %}
     <div class="create">
-        <h1>plays</h1>
-        <form method="post">
-            <!-- Security Feature  -->
-            {% csrf_token %} 
-            <!--  Generate inputs  -->
-            {{form.as_p}} 
-            <!--  Submit form  -->
-            <button type="submit" class="btn btn-light">Submit</button>
-        </form>
+        <h1 class="createh1">Add Plays</h1>
+        <div class="creatediv"></div>
+            <form method="post">
+                <!-- Security Feature  -->
+                {% csrf_token %} 
+                <!--  Generate inputs  -->
+                {{form.as_p}} 
+                <!--  Submit form  -->
+                <button type="submit" class="btn btn-light">Submit</button>
+            </form>
+        </div>
     </div>
 {% endblock %}

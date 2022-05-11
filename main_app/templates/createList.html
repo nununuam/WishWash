@@ -3,8 +3,8 @@
 
 {% block content %}
 	<div class="create">
-		<div class="createlist">
-			<h1 class="createh1">Creating List Page</h1>
+		<h1 class="createh1">Creating List Page</h1>
+		<div class="creatediv">
 			<form action = "" method = 'post'>
 				{% csrf_token %}
 				{{form.as_p}}
