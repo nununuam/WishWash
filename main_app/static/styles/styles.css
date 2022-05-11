@@ -42,4 +42,13 @@ button {
 .col-md-4 {
     margin-bottom: 5%;
 }
-
+.btn-primary{
+    background-color: rgb(255, 242, 242) !important;
+    color:rgb(77, 30, 30);
+    border-color: rgb(77, 30, 30);
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: rgb(77, 30, 30) !important;
+    color:rgb(255, 242, 242);
+    border-color: rgb(77, 30, 30);
+}
