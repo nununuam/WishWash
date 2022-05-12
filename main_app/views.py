@@ -140,6 +140,11 @@ class DetailList(DetailView):
 class DetailBookPage(DetailView):
     model = Book
     template_name = "detailBook.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["movies"] = Movie.objects.all()
+        context["plays"] = Play.objects.all()
+        return context
 
 # def DetailBookPage(request, book_id):
 #     book = Book.objects.get(id=book_id)

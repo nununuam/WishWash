@@ -2,30 +2,36 @@
 {% load static %}
 
 {% block content %}
-    <h1>Detail Page for a book</h1>
-    <div>
-        <h3>{{book.title}}</h3>
-        <img  style = "max-width:50px" src = "{{book.img}}"/>
-        <h5>{{book.author}}</h5>
-        <h5>{{book.genre}}</h5>
-        <h5>{{book.preview}}</h5>
-        <h4>Movies</h4>
-        <ul class = 'ul'>
-            {% for movie in book.movies.all %}
-                <li>{{movie.title}}</li>
-            {% empty %}
-                <div>No movie</div>
+    <div class='bookDetail'>
+        <div class='bookDetailInfo'>
+            <img class='bookImage'src = "{{book.img}}"/>
+                <div class = 'bookText'>
+                    <h3>{{book.title}}</h3>
+                    <h5 class='author'>By {{book.author}}</h5>
+                    <h5>Overview :</h5>
+                    <h5 class ='bookPreview'>{{book.preview}}</h5>
+                    <h5>Genre :</h5>
+                    <h5 class='bookGenre'>{{book.genre}}</h5>
+                </div>
+        </div>  
+        <h4 class = 'section'>You May Also Like</h4>
+        <h3 class ='bookMovies'>Movies</h3>
+            <div class='bookMovieImg'>
+            {% for movie in movies %}
+                <a href="{% url 'detailMovie' movie.pk %}">
+                    <img  style = "max-width:100px" src = "{{movie.img}}"/>
+                </a>
+              {% endfor %}
+            </div>
+        <h3 class= 'bookPlays'>Plays</h3>
+            <div class='bookPlayImg'>
+            {% for play in plays %}
+                <a href="{% url 'detailBroadway' play.pk %}">
+                    <img  style = "max-width:100px" src = "{{play.img}}"/>
+                </a>
             {% endfor %}
-        </ul>
-        <h4>Plays</h4>
-        <ul class = 'ul'>
-            {% for play in book.plays.all %}
-                <li>{{play.title}}</li>
-            {% empty %}
-                <div>No play</div>
-            {% endfor %}
-        </ul>
-    </div>
+            </div>
+        </div>
     <div>
         <span class = "spanbuttons"><a href="{% url 'bookedit' book.pk %}">Edit Task</a></span>
         <span class = "spanbuttons"><a href="{% url 'bookdelete' book.pk %}">Delete Task</a></span>
