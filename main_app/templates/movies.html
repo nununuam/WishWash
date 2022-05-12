@@ -9,16 +9,24 @@
             <input type = 'submit' value='Search'/>
         </div>
     </form>
-    {% for movie in movies %}
-        <div>
-            <a href="{% url 'detailMovie' movie.pk %}">
-                <h3>{{movie.title}}</h3>
-            </a>
-            <img  style = "max-width:50px" src = "{{movie.img}}"/>
-            <h5>{{movie.cast}}</h5>
-            <h5>{{movie.trailer}}</h5>
-            <h5>{{movie.book}}</h5>
-            <h5>{{movie.plays}}</h5>
+    <div class="namecards">
+        <div class="py-5">
+            <div class="container">
+                <div class="row hidden-md-up">
+                    {% for movie in movies %}
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{{movie.img}}" alt="Card image cap" height="300">
+                            <div class="card-body">
+                                <h5 class="card-title">{{movie.title}}</h5>
+                                <p class="card-text"></p>
+                                <a href="{% url 'detailMovie' movie.pk %}" class="btn btn-primary">view</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-    {% endfor %}
+    </div>
 {% endblock %}
