@@ -3,33 +3,35 @@
 
 {% block content %}
 
-
-=======
-    <h1>Home</h1>
     {% if user.is_authenticated %}
     <div class='home'>
           <h1>Books</h1>
               {% for book in books %}
+                {% if forloop.counter <= 10 %}
                   <a href="{% url 'detailBook' book.pk %}">
                       <img  style = "max-width:50px" src = "{{book.img}}"/>
                   </a>
+                  {% endif %}
               {% endfor %}
           <h1>Movies</h1>
               {% for movie in movies %}
-              <a href="{% url 'detailMovie' movie.pk %}">
-                  <img  style = "max-width:50px" src = "{{movie.img}}"/>
-              </a>
+                {% if forloop.counter <= 10 %}
+                <a href="{% url 'detailMovie' movie.pk %}">
+                    <img  style = "max-width:50px" src = "{{movie.img}}"/>
+                </a>
+                {% endif %}
               {% endfor %}
           <h1>Broadways</h1>
               {% for play in plays %}
-              <a href="{% url 'detailBroadway' play.pk %}">
-                  <img  style = "max-width:50px" src = "{{play.img}}"/>
-              </a>
+                {% if forloop.counter <= 10 %}
+                <a href="{% url 'detailBroadway' play.pk %}">
+                    <img  style = "max-width:50px" src = "{{play.img}}"/>
+                </a>
+                {% endif %}
               {% endfor %}
       </div>
     {%else %}
     <a href = "{% url 'signup' %}">Sign Up</a>
     <a href = "{% url 'login' %}">Login</a>
     {% endif %}
-
 {% endblock %}
