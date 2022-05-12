@@ -47,7 +47,7 @@ button {
 }
 .bookDetailInfo{
     background-color:rgba(50, 27, 27, 0.558);
-    padding: 1% 0 10% 1%;
+    padding: 10px 10px 230px 10px;
 }
 .bookText h3, h5{
     padding: 5px 10px 5px 350px;
@@ -93,5 +93,37 @@ h4:before {
     text-align: center;
 }
 .bookPlayImg{
+    text-align: center;
+}
+
+/* Broadways Detail */
+.playImage{
+    max-width: 300px;
+    float:left;
+}
+.playDetail{
+    padding: 70px 50px 0 50px;
+}
+.playDetailInfo{
+    background-color:rgba(50, 27, 27, 0.558);
+    padding: 10px 10px 230px 10px;
+}
+.playText h3, h5{
+    padding: 5px 10px 5px 350px;
+}
+.director{
+    font-size: 14px;
+}
+.playMovies{
+    text-align: center;
+}
+.playBooks{
+    text-align: center;
+    padding: 30px 0 0 0;
+}
+.playMovieImg{
+    text-align: center;
+}
+.playBookImg{
     text-align: center;
 }

@@ -158,6 +158,11 @@ class DetailBookPage(DetailView):
 class DetailBroadwayPage(DetailView):
     model = Play
     template_name = "detailBroadway.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["books"] = Book.objects.all()
+        context["plays"] = Play.objects.all()
+        return context
 # def DetailMoviePage(request, movie_id):
 #     movie = Movie.objects.get(id=movie_id)
 #     return render(request, 'detailMovie.html', {'movie':movie})
