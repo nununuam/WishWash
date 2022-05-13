@@ -33,7 +33,7 @@ button {
      text-align:center;
  }
 .home img{
-    padding: 5px;
+    padding: 5px rgb(255, 242, 242);
 }
 
 .namecards {
@@ -52,3 +52,16 @@ button {
     color:rgb(255, 242, 242);
     border-color: rgb(77, 30, 30);
 }
+
+@media (min-width: 576px) { 
+  .card-columns {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+    column-gap: .2rem;
+    orphans: 1;
+    widows: 1;
+    margin: 1%;
+  }
+}
+
