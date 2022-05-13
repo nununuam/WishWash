@@ -23,7 +23,7 @@ button {
     background-color: #FCEDED;
 }
 
- .nav_bar a{
+.nav_bar a{
     color: rgb(255, 242, 242);
     text-decoration: none;
  }
@@ -33,7 +33,36 @@ button {
      text-align:center;
  }
 .home img{
-    padding: 5px;
+    padding: 5px rgb(255, 242, 242);
+}
+
+.namecards {
+    color:rgb(77, 30, 30);
+}
+.col-md-4 {
+    margin-bottom: 5%;
+}
+.btn-primary{
+    background-color: rgb(255, 242, 242) !important;
+    color:rgb(77, 30, 30);
+    border-color: rgb(77, 30, 30);
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: rgb(77, 30, 30) !important;
+    color:rgb(255, 242, 242);
+    border-color: rgb(77, 30, 30);
+}
+
+@media (min-width: 576px) { 
+  .card-columns {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+    column-gap: .2rem;
+    orphans: 1;
+    widows: 1;
+    margin: 1%;
+  }
 }
 
 
