@@ -2,29 +2,45 @@
 {% load static %}
 
 {% block content %}
-    <h1>Detail page for movie</h1>
-    <div>
-        <div>
-            <h3>{{movie.title}}</h3>
-            <img  style = "max-width:50px" src = "{{movie.img}}"/>
-            <h5>{{movie.cast}}</h5>
-            <iframe width="560" height="315" src="{{movie.trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <ul class = 'ul'>
-                {% for book in movie.book_set.all %}
-                    <li>{{book.title}}</li>
-                {% empty %}
+        <div class='movieDetail'>
+            <div class='movieDetailInfo'>
+                <img class='movieImage'src = "{{movie.img}}"/>
+                    <div class = 'playText'>
+                        <h3>{{movie.title}}</h3>
+                        <h5>Cast :</h5>
+                        <h5>{{movie.cast}}</h5>
+                        <h5>Overview :</h5>
+                        <h5 class ='bookPreview'>{{movie.preview}}</h5>
+                    </div>
+            </div>  
+            <div class='trailerpadding'></div>
+            <iframe width="500" height="255" src="{{movie.trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h4 class = 'section'>You May Also Like</h4>
+            <h3 class ='moviePlays'>Plays</h3>
+                <div class='moviePlayImg'>
+                    {% for play in movie.play_set.all %}
+                        <a href="{% url 'detailBroadway' play.pk %}">
+                            <img  style = "max-width:100px" src = "{{play.img}}"/>
+                        </a>
+                    {% empty %}
+                    <div>No Play</div>
+                  {% endfor %}
+                </div>
+            <h3 class='movieBook'>Books</h3>
+                <div class='movieBookImg'>
+                    {% for book in movie.book_set.all %}
+                        <a href="{% url 'detailBook' book.pk %}">
+                            <img  style = "max-width:100px" src = "{{book.img}}"/>
+                        </a>
+                    {% empty %}
                     <div>No book</div>
                 {% endfor %}
-            </ul>
-            <ul class = 'ul'>
-                {% for play in movie.play_set.all %}
-                    <li>{{play.title}}</li>
-                {% empty %}
-                    <div>No play</div>
-                {% endfor %}
-            </ul>
-        </div>
+                </div>
+            </div>
         <div>
+
+        <div>
+        
             <span class = "spanbuttons"><a href="{% url 'movieedit' movie.pk %}">Edit Task</a></span>
             <span class = "spanbuttons"><a href="{% url 'moviedelete' movie.pk %}">Delete Task</a></span>
         </div>

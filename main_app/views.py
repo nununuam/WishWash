@@ -161,7 +161,7 @@ class DetailBroadwayPage(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["books"] = Book.objects.all()
-        context["plays"] = Play.objects.all()
+        context["movies"] = Movie.objects.all()
         return context
 # def DetailMoviePage(request, movie_id):
 #     movie = Movie.objects.get(id=movie_id)
@@ -169,6 +169,11 @@ class DetailBroadwayPage(DetailView):
 class DetailMoviePage(DetailView):
     model = Movie
     template_name = "detailMovie.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["books"] = Book.objects.all()
+        context["plays"] = Play.objects.all()
+        return context
     
 
 class AddBook(LoginRequiredMixin, CreateView):

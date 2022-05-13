@@ -6,6 +6,8 @@ class Movie(models.Model):
     img = models.CharField(max_length=1000)
     cast = models.CharField(max_length=1000)
     trailer = models.CharField(max_length=1000)
+    preview = models.CharField(max_length=1000)
+    
 
     def __str__(self):
         return self.title
@@ -19,6 +21,7 @@ class Play(models.Model):
     director = models.CharField(max_length=250)
     cast = models.CharField(max_length=1000)
     movies = models.ManyToManyField(Movie, blank=True)
+    preview = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.title

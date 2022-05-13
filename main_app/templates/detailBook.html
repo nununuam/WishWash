@@ -17,18 +17,22 @@
         <h4 class = 'section'>You May Also Like</h4>
         <h3 class ='bookMovies'>Movies</h3>
             <div class='bookMovieImg'>
-            {% for movie in movies %}
-                <a href="{% url 'detailMovie' movie.pk %}">
-                    <img  style = "max-width:100px" src = "{{movie.img}}"/>
-                </a>
+                {% for movie in book.movies.all %}
+                    <a href="{% url 'detailMovie' movie.pk %}">
+                        <img  style = "max-width:100px" src = "{{movie.img}}"/>
+                    </a>
+                {% empty %}
+                    <div>No Movie</div>
               {% endfor %}
             </div>
         <h3 class= 'bookPlays'>Plays</h3>
             <div class='bookPlayImg'>
-            {% for play in plays %}
+            {% for play in book.plays.all %}
                 <a href="{% url 'detailBroadway' play.pk %}">
                     <img  style = "max-width:100px" src = "{{play.img}}"/>
                 </a>
+                {% empty %}
+                    <div>No Play</div>
             {% endfor %}
             </div>
         </div>
