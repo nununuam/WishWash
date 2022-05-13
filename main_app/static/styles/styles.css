@@ -65,3 +65,131 @@ button {
   }
 }
 
+
+/* Book Detail */
+.bookImage{
+    max-height: 370px;
+    float:left;
+}
+.bookDetail{
+    padding: 70px 50px 50px 50px;
+}
+.bookDetailInfo{
+    background-color:rgba(50, 27, 27, 0.558);
+    padding: 20px 20px 6vh 20px;
+}
+.bookText h3, h5{
+    padding: 5px 10px 5px 350px;
+}
+.author{
+    font-size: 14px;
+}
+.bookPreview{
+    font-size: 17px;
+}
+.bookGenre{
+    font-size: 17px;
+}
+  .section {
+    position: relative;
+    font-size: 30px;
+    z-index: 1;
+    text-align: center;
+    padding: 140px 0 50px 0;
+}
+h4:before, h4:after {
+    position: absolute;
+    top: 70%;
+    overflow: hidden;
+    width: 50%;
+    height: 1px;
+    content: '\a0';
+    background-color: white;
+}
+h4:before {
+    margin-left: -50%;
+    text-align: right;
+}
+
+.bookMovies{
+    text-align: center;
+}
+.bookPlays{
+    text-align: center;
+    padding: 30px 0 0 0;
+}
+.bookMovieImg{
+    text-align: center;
+}
+.bookPlayImg{
+    text-align: center;
+}
+
+/* Broadways Detail */
+.playImage{
+    max-height: 370px;
+    float:left;
+}
+.playDetail{
+    padding: 70px 50px 50px 50px;
+}
+.playDetailInfo{
+    background-color:rgba(50, 27, 27, 0.558);
+    padding: 20px 20px 6vh 20px;
+}
+.playText h3, h5{
+    padding: 5px 10px 5px 350px;
+}
+.director{
+    font-size: 14px;
+}
+.playMovies{
+    text-align: center;
+}
+.playBooks{
+    text-align: center;
+    padding: 30px 0 0 0;
+}
+.playMovieImg{
+    text-align: center;
+}
+.playBookImg{
+    text-align: center;
+}
+
+/* Movie Detail */
+.movieImage{
+    max-height: 370px;
+    float:left;
+}
+.movieDetail{
+    padding: 70px 50px 50px 50px;
+}
+.movieDetailInfo{
+    background-color:rgba(50, 27, 27, 0.558);
+    padding: 20px 20px 6vh 20px;
+}
+.movieText h3, h5{
+    padding: 5px 10px 5px 350px;
+}
+.moviePlays{
+    text-align: center;
+}
+.movieBook{
+    text-align: center;
+    padding: 30px 0 0 0;
+}
+.moviePlayImg{
+    text-align: center;
+}
+.movieBookImg{
+    text-align: center;
+}
+.trailerpadding{
+    padding: 15px;
+}
+
+iframe{
+    display: block;
+    margin: 0 auto;
+}

@@ -140,6 +140,11 @@ class DetailList(DetailView):
 class DetailBookPage(DetailView):
     model = Book
     template_name = "detailBook.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["movies"] = Movie.objects.all()
+        context["plays"] = Play.objects.all()
+        return context
 
 # def DetailBookPage(request, book_id):
 #     book = Book.objects.get(id=book_id)
@@ -153,12 +158,22 @@ class DetailBookPage(DetailView):
 class DetailBroadwayPage(DetailView):
     model = Play
     template_name = "detailBroadway.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["books"] = Book.objects.all()
+        context["movies"] = Movie.objects.all()
+        return context
 # def DetailMoviePage(request, movie_id):
 #     movie = Movie.objects.get(id=movie_id)
 #     return render(request, 'detailMovie.html', {'movie':movie})
 class DetailMoviePage(DetailView):
     model = Movie
     template_name = "detailMovie.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["books"] = Book.objects.all()
+        context["plays"] = Play.objects.all()
+        return context
     
 
 class AddBook(LoginRequiredMixin, CreateView):
