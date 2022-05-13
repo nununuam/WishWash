@@ -17,25 +17,57 @@
   <header>
     <div class = nav_bar>
       {% block header %}
-      <h5>WishWash</h5>
-      {% if user.is_authenticated %}
-          <a href = '/user/{{user.username}}'>Profile</a>
-          <a href="/accounts/logout/">Sign Out</a>
-          <a href= "{% url 'addbook' %}">Create Book</a>
-          <a href= "{% url 'addmovie' %}">Create Movie</a>
-          <a href= "{% url 'addplay' %}">Create Play</a>
-          <a href= "{% url 'createList' %}">Create List</a>
-          <a href = '/books/'>Books</a>
-          <a href = '/movies/'>Movies</a>
-          <a href = '/broadways/'>Broadways</a>
-        {%else %}
-          <a href="{% url 'login' %}">Login</a>
-          <a href = '/books/'>Books</a>
-          <a href = '/movies/'>Movies</a>
-          <a href = '/broadways/'>Broadways</a>
-        {% endif %}
-        <a href="/">Home</a>
-        <a href="/admin">Admin</a>
+        <h5>WishWash</h5>
+          <ul class="nav nav-pills nav-fill">
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href = '/user/{{user.username}}'>Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/accounts/logout/">Sign Out</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href= "{% url 'addbook' %}">Create Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href= "{% url 'addmovie' %}">Create Movie</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href= "{% url 'addplay' %}">Create Play</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href= "{% url 'createList' %}">Create List</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href = '/books/'>Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href = '/movies/'>Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href = '/broadways/'>Broadways</a>
+              </li>
+            {%else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href = '/books/'>Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href = '/movies/'>Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href = '/broadways/'>Broadways</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Admin</a>
+            </li>
+          </ul>
       {% endblock %}
     </div>  
   </header>
