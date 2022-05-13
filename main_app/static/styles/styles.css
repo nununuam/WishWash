@@ -27,7 +27,11 @@ button {
     color: rgb(255, 242, 242);
     text-decoration: none;
  }
-
+.nav_bar h1{
+    font-weight: bold;
+    margin-left: 2%;
+    margin-top: 2%;
+}
  /* home page */
  .home h1{
      text-align:center;

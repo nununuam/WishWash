@@ -15,16 +15,22 @@
     </title>
   </head>
   <header>
-    <div class = nav_bar>
-      {% block header %}
-        <h5>WishWash</h5>
+    {% block header %}
+      <div class = nav_bar>
+          <h1><a href = '/home/'>WishWash</a></h1>
           <ul class="nav nav-pills nav-fill">
             {% if user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link" href = '/user/{{user.username}}'>Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/accounts/logout/">Sign Out</a>
+                <a class="nav-link" href = '/books/'>Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href = '/movies/'>Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href = '/broadways/'>Broadways</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href= "{% url 'addbook' %}">Create Book</a>
@@ -39,6 +45,16 @@
                 <a class="nav-link" href= "{% url 'createList' %}">Create List</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/admin">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/accounts/logout/">Sign Out</a>
+              </li>
+            {%else %}
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href = '/books/'>Books</a>
               </li>
               <li class="nav-item">
@@ -47,29 +63,16 @@
               <li class="nav-item">
                 <a class="nav-link" href = '/broadways/'>Broadways</a>
               </li>
-            {%else %}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href = '/books/'>Books</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href = '/movies/'>Movies</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href = '/broadways/'>Broadways</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin">Admin</a>
+              </li>
             {% endif %}
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/admin">Admin</a>
-            </li>
           </ul>
-      {% endblock %}
-    </div>  
+      </div> 
+    {% endblock %} 
   </header>
   <body>
     {% block content %}  
