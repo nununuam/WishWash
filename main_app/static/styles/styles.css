@@ -58,14 +58,10 @@ button {
     -webkit-column-count: 5;
     -moz-column-count: 5;
     column-count: 5;
-    column-gap: .8rem;
+    column-gap: .2rem;
     orphans: 1;
     widows: 1;
+    margin: 1%;
   }
 }
 
-.card {
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
-}
