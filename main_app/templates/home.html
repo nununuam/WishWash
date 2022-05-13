@@ -48,8 +48,10 @@
     </div>
 </div>
 {%else %}
-<a href="{% url 'signup' %}">Sign Up</a>
-<a href="{% url 'login' %}">Login</a>
+<div class='loginLogout'>
+    <a class='signup'href="{% url 'signup' %}">Sign Up</a>
+    <a class='login' href="{% url 'login' %}">Login</a>
+</div>
 {% endif %}
 
 {% endblock %}
