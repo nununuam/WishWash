@@ -39,8 +39,7 @@ button {
 
 /* Book Detail */
 .bookImage{
-    max-width: 400px;
-    max-height: 460px;
+    max-height: 370px;
     float:left;
 }
 .bookDetail{
@@ -99,8 +98,7 @@ h4:before {
 
 /* Broadways Detail */
 .playImage{
-    max-width: 400px;
-    max-height: 350px;
+    max-height: 370px;
     float:left;
 }
 .playDetail{
@@ -132,8 +130,7 @@ h4:before {
 
 /* Movie Detail */
 .movieImage{
-    max-width: 400px;
-    max-height: 350px;
+    max-height: 370px;
     float:left;
 }
 .movieDetail{
