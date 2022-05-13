@@ -256,3 +256,7 @@ iframe{
     background-color: rgb(77, 30, 30);
     text-decoration: none;
 }
+.listLink:hover{
+    text-decoration: none;
+    color: rgba(255, 213, 213, 0.886);
+}

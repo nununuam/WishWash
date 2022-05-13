@@ -8,7 +8,7 @@
         <a class='createList' href = "{% url 'createList' %}">Create List</a>
     {% endif %}
     {% for list in lists %} 
-        <a href = "{% url 'detailList' list.pk %}"/>
+        <a class='listLink'href = "{% url 'detailList' list.pk %}"/>
             <h5 class = 'listName'>Name: {{list.name}}</h5>
         </a>
     {% endfor %}
