@@ -4,7 +4,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-
+<div class="home">
     <h1>Books</h1>
     <div class="card-columns py-3">
         <div class="container">
@@ -46,6 +46,7 @@
         {% endif %}
         {% endfor %}
     </div>
+</div>
 {%else %}
 <a href="{% url 'signup' %}">Sign Up</a>
 <a href="{% url 'login' %}">Login</a>
