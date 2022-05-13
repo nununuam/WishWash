@@ -9,7 +9,7 @@
     {% endif %}
     {% for list in lists %} 
         <a class='listLink'href = "{% url 'detailList' list.pk %}"/>
-            <h5 class = 'listName'>Name: {{list.name}}</h5>
+            <h5 class = 'listName'>{{list.name}}</h5>
         </a>
     {% endfor %}
 </div>
