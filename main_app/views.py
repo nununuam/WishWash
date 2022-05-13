@@ -1,4 +1,5 @@
 from dataclasses import field
+from logging.handlers import TimedRotatingFileHandler
 from pipes import Template
 from .models import Book, Movie, Play, List
 from .models import List as ListModel
@@ -47,10 +48,15 @@ class Home(TemplateView):
 class Movies(TemplateView):
     template_name = "movies.html"
     def get_context_data(self, **kwargs):
-         context = super().get_context_data(**kwargs)
-         title = self.request.GET.get("title")
-         context["movies"] = Movie.objects.all()
-         return context
+        context = super().get_context_data(**kwargs)
+        title = self.request.GET.get("name")
+        if title != None:
+            context['movies'] = Movie.objects.filter(title__icontains=title)
+            context['header'] = f'Searching for {title}'
+        else:
+            context["movies"] = Movie.objects.all()
+            context['header'] = 'All Movies'
+        return context
 
 #API testing codes below
     #def get_context_data(self, **kwargs):
@@ -83,10 +89,10 @@ class Books(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        name = self.request.GET.get('title')
-        if name != None:
-            context['books'] = Book.objects.filter(name__icontains=name)
-            context['header'] = f'Searching for {name}'
+        title = self.request.GET.get('name')
+        if title != None:
+            context['books'] = Book.objects.filter(title__icontains=title)
+            context['header'] = f'Searching for {title}'
         else:
             context['books'] = Book.objects.all()
             context['header'] = 'All Books'
@@ -111,10 +117,15 @@ class Lists(TemplateView):
 class Broadways(TemplateView):
     template_name = "broadways.html"
     def get_context_data(self, **kwargs):
-         context = super().get_context_data(**kwargs)
-         title = self.request.GET.get("title")
-         context["plays"] = Play.objects.all()
-         return context
+        context = super().get_context_data(**kwargs)
+        title = self.request.GET.get("name")
+        if title != None:
+            context['plays'] = Play.objects.filter(title__icontains=title)
+            context['header'] = f'Searching for {title}'
+        else:
+            context['plays'] = Play.objects.all()
+            context['header'] = 'All Broadways'
+        return context
 
 class CreateList(LoginRequiredMixin, CreateView):
     template_name = "createList.html"
