@@ -3,35 +3,49 @@
 
 {% block content %}
 
-    {% if user.is_authenticated %}
-    <div class='home'>
-          <h1>Books</h1>
-              {% for book in books %}
-                {% if forloop.counter <= 10 %}
-                  <a href="{% url 'detailBook' book.pk %}">
-                      <img  style = "max-width:50px" src = "{{book.img}}"/>
-                  </a>
-                  {% endif %}
-              {% endfor %}
-          <h1>Movies</h1>
-              {% for movie in movies %}
-                {% if forloop.counter <= 10 %}
+{% if user.is_authenticated %}
+    <h1>Books</h1>
+        <div class="card-columns py-3">
+            {% for book in books %}
+            {% if forloop.counter <= 10 %} 
+            <div class="card">
+                <a href="{% url 'detailBook' book.pk %}">
+                    <img height="300" width="300" src="{{book.img}}" class="card-img-top" alt="img">
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <h1>Movies</h1>
+        <div class="card-columns py-3">
+            {% for movie in movies %}
+            {% if forloop.counter <= 10 %} 
+            <div class="card">
                 <a href="{% url 'detailMovie' movie.pk %}">
-                    <img  style = "max-width:50px" src = "{{movie.img}}"/>
+                    <img height="300" width="300" src="{{movie.img}}" class="card-img-top" alt="img">
                 </a>
-                {% endif %}
-              {% endfor %}
-          <h1>Broadways</h1>
-              {% for play in plays %}
-                {% if forloop.counter <= 10 %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <h1>Broadways</h1>
+        <div class="card-columns py-3">
+            {% for play in plays %}
+            {% if forloop.counter <= 10 %} 
+            <div class="card">
                 <a href="{% url 'detailBroadway' play.pk %}">
-                    <img  style = "max-width:50px" src = "{{play.img}}"/>
+                    <img height="300" width="300" src="{{play.img}}" class="card-img-top" alt="img">
                 </a>
-                {% endif %}
-              {% endfor %}
-      </div>
-    {%else %}
-    <a href = "{% url 'signup' %}">Sign Up</a>
-    <a href = "{% url 'login' %}">Login</a>
-    {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+{%else %}
+<a href="{% url 'signup' %}">Sign Up</a>
+<a href="{% url 'login' %}">Login</a>
+{% endif %}
+
 {% endblock %}
