@@ -120,7 +120,10 @@ button {
   }
 }
 
-
+/* Book Page */
+.booksPage h1, form{
+    text-align: center;
+}
 /* Book Detail */
 .bookImage{
     max-height: 370px;
@@ -130,7 +133,7 @@ button {
     padding: 70px 50px 50px 50px;
 }
 .bookDetailInfo{
-    background-color:rgba(50, 27, 27, 0.558);
+    background-color:rgba(0, 0, 0, 0.558);
     padding: 20px 20px 6vh 20px;
 }
 .bookText h3, h5{
@@ -179,7 +182,10 @@ h4:before {
 .bookPlayImg{
     text-align: center;
 }
-
+/* Broadway Page */
+.broadwayPage h1, form{
+    text-align: center;
+}
 /* Broadways Detail */
 .playImage{
     max-height: 370px;
@@ -189,7 +195,7 @@ h4:before {
     padding: 70px 50px 50px 50px;
 }
 .playDetailInfo{
-    background-color:rgba(50, 27, 27, 0.558);
+    background-color:rgba(0, 0, 0, 0.558);
     padding: 20px 20px 6vh 20px;
 }
 .playText h3, h5{
@@ -211,7 +217,10 @@ h4:before {
 .playBookImg{
     text-align: center;
 }
-
+/* Movie Page */
+.broadwayPage h1, form{
+    text-align: center;
+}
 /* Movie Detail */
 .movieImage{
     max-height: 370px;
@@ -221,7 +230,7 @@ h4:before {
     padding: 70px 50px 50px 50px;
 }
 .movieDetailInfo{
-    background-color:rgba(50, 27, 27, 0.558);
+    background-color:rgba(0, 0, 0, 0.558);
     padding: 20px 20px 6vh 20px;
 }
 .movieText h3, h5{
