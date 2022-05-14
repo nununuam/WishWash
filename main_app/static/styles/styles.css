@@ -133,7 +133,7 @@ button {
     padding: 70px 50px 50px 50px;
 }
 .bookDetailInfo{
-    background-color:rgba(50, 27, 27, 0.558);
+    background-color:rgba(0, 0, 0, 0.558);
     padding: 20px 20px 6vh 20px;
 }
 .bookText h3, h5{
@@ -195,7 +195,7 @@ h4:before {
     padding: 70px 50px 50px 50px;
 }
 .playDetailInfo{
-    background-color:rgba(50, 27, 27, 0.558);
+    background-color:rgba(0, 0, 0, 0.558);
     padding: 20px 20px 6vh 20px;
 }
 .playText h3, h5{
@@ -218,7 +218,7 @@ h4:before {
     text-align: center;
 }
 /* Movie Page */
-.moviePage h1, form{
+.broadwayPage h1, form{
     text-align: center;
 }
 /* Movie Detail */
@@ -230,7 +230,7 @@ h4:before {
     padding: 70px 50px 50px 50px;
 }
 .movieDetailInfo{
-    background-color:rgba(50, 27, 27, 0.558);
+    background-color:rgba(0, 0, 0, 0.558);
     padding: 20px 20px 6vh 20px;
 }
 .movieText h3, h5{
