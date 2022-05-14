@@ -19,7 +19,9 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="{{movie.img}}" alt="Card image cap" height="300">
                             <div class="card-body">
-                                <h5 class="card-title">{{movie.title}}</h5>
+                                <span class="title">
+                                    <p class="card-text">{{movie.title}}</p>
+                                </span>
                                 <p class="card-text"></p>
                                 <a href="{% url 'detailMovie' movie.pk %}" class="btn btn-primary">view</a>
                             </div>

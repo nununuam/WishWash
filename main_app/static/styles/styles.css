@@ -124,6 +124,10 @@ button {
 .booksPage h1, form{
     text-align: center;
 }
+.title {
+    font-weight: bolder;
+    font-size: larger;
+}
 /* Book Detail */
 .bookImage{
     max-height: 370px;
