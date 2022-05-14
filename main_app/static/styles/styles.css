@@ -44,7 +44,7 @@ button {
     100% {left: 0%;}
 }
  /* home page */
- .home h1{
+ .home h1,h2{
      text-align:center;
  }
 .home img{
@@ -218,7 +218,7 @@ h4:before {
     text-align: center;
 }
 /* Movie Page */
-.broadwayPage h1, form{
+.moviePage h1, form{
     text-align: center;
 }
 /* Movie Detail */
@@ -279,16 +279,24 @@ iframe{
     color: rgb(255, 242, 242);
     background-color: rgb(77, 30, 30);
     text-decoration: none;
+    border: 1px solid rgb(255, 242, 242);
 }
 .listLink:hover{
     text-decoration: none;
     color: rgba(255, 213, 213, 0.886);
 }
-.listDetail h1, h3{
+.listDetailColumn{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.listDetail h1{
     text-align: center;
+    font-weight: 100;
+    font-size: xxx-large;
 }
 .listDetail h3{
     padding-bottom: 10px;
+    text-align: center;
 }
 .listDetail a{
     display: flex;
@@ -313,6 +321,25 @@ iframe{
     padding: 0;
 }
 .listDetail img{
-    margin: 0 20px 10px 44%;
+    margin: 0 20px 10px 30%;
     max-width:45px;
+}
+/* Edit/Delete Button */
+.editDelete{
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
+.editDelete a{
+    margin: 0 150px 0 150px;
+    padding: 5px;
+    background-color:rgb(255, 242, 242);
+    color: rgb(77, 30, 30);
+    border-radius: 5px;
+}
+.editDelete a:hover{
+    background-color:rgb(77, 30, 30);
+    color: rgb(255, 242, 242);
+    border-radius: 1px solid rgb(255, 242, 242);
+    text-decoration: none;
+    border: 1px solid rgb(255, 242, 242);
 }

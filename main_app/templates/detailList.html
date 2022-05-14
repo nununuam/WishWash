@@ -7,8 +7,14 @@
         margin: 0;
     }
 </style>
+<div class='editDelete'>
+    <a href = "{% url 'listUpdate' list.pk %}">Edit</a>
+    <a href = "{% url 'listDelete' list.pk %}">Delete</a>
+</div>
 <div class ='listDetail'>
     <h1>{{list.name}}</h1>
+    <div class='listDetailColumn'>
+    <div>
     <h3>Books:</h3>
     <ul>
         {% for book in list.books.all %}
@@ -22,6 +28,8 @@
             <div>No Book</div>
         {% endfor %}
     </ul>
+    </div>
+    <div>
     <h3>Movies:</h3>
     <ul>
         {% for movie in list.movies.all %}
@@ -35,6 +43,8 @@
             <div>No Movie</div>
         {% endfor %}
     </ul>
+    </div>
+    <div>
     <h3>Plays:</h3>
     <ul>
         {% for play in list.plays.all %}
@@ -48,8 +58,7 @@
             <div>No Play</div>
         {% endfor %}
     </ul>
+    </div>
+    </div>
 </div>
-    <a href = "{% url 'listUpdate' list.pk %}">Edit</a>
-    <a href = "{% url 'listDelete' list.pk %}">Delete</a>
-
 {% endblock %}
