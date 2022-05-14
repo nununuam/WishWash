@@ -5,6 +5,13 @@
 
 {% if user.is_authenticated %}
 <div class="home">
+    <h2>{{header}}</h2>
+    <form>
+        <div>
+            <input type ='text' name='name' placeholder='Search All'/>
+            <input type = 'submit' value='Search'/>
+        </div>
+    </form>
     <h1>Books</h1>
     <div class="card-columns py-3">
         <div class="container">

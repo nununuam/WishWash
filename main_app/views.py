@@ -23,14 +23,20 @@ import requests
 
 class Home(TemplateView):
     template_name = "home.html"
-    response = requests.get("https://imdb-api.com/en/API/Top250Movies/k_lblhnjr6")
+    # response = requests.get("https://imdb-api.com/en/API/Top250Movies/k_lblhnjr6")
     def get_context_data(self, **kwargs):
-         context = super().get_context_data(**kwargs)
-         title = self.request.GET.get("title")
-         context["books"] = Book.objects.all()
-         context["movies"] = Movie.objects.all()
-         context["plays"] = Play.objects.all()
-         return context
+        context = super().get_context_data(**kwargs)
+        title = self.request.GET.get("name")
+        if title != None:
+            context["books"] = Book.objects.filter(title__icontains=title)
+            context["movies"] = Movie.objects.filter(title__icontains=title)
+            context["plays"] = Play.objects.filter(title__icontains=title)
+            context['header']=f'Searching for {title}'
+        else:
+            context["books"] = Book.objects.all()
+            context["movies"] = Movie.objects.all()
+            context["plays"] = Play.objects.all()
+        return context
 
     #
     #print(response.status_code)
