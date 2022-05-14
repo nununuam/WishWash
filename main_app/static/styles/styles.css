@@ -55,6 +55,12 @@ button {
     white-space: nowrap;
     -webkit-animation: rightThenLeft 15s linear;
 }
+.marquee a{
+    text-decoration: none
+}
+.marquee a:hover{
+    color: rgba(255, 213, 213, 0.886);
+}
 
 @-webkit-keyframes rightThenLeft {
     0%   {left: 0%;}
