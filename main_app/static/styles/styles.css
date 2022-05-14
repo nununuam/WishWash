@@ -22,7 +22,6 @@ body {
 button {
     background-color: #FCEDED;
 }
-
 .nav_bar a{
     color: rgb(255, 242, 242);
     text-decoration: none;
@@ -31,6 +30,18 @@ button {
     font-weight: bold;
     margin-left: 2%;
     margin-top: 2%;
+}
+
+.marquee {
+    position: relative;
+    white-space: nowrap;
+    -webkit-animation: rightThenLeft 15s linear;
+}
+
+@-webkit-keyframes rightThenLeft {
+    0%   {left: 0%;}
+    50%  {left: 100%;}
+    100% {left: 0%;}
 }
  /* home page */
  .home h1{
