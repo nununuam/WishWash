@@ -2,9 +2,11 @@
 {% load static %}
 
 {% block content %}
+    <div class="signuppage">
     <h1>Signup page</h1>
-    <form method = 'post'>
-        {% csrf_token %}
-        {{form.as_p}}
-    <button type="submit"> Sign Up</button>
+        <form method = 'post'>
+            {% csrf_token %}
+            {{form.as_p}}
+        <button type="submit"> Sign Up</button>
+    </div>
 {% endblock %}
