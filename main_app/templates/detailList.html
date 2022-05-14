@@ -7,6 +7,10 @@
         margin: 0;
     }
 </style>
+<div class='editDelete'>
+    <a href = "{% url 'listUpdate' list.pk %}">Edit</a>
+    <a href = "{% url 'listDelete' list.pk %}">Delete</a>
+</div>
 <div class ='listDetail'>
     <h1>{{list.name}}</h1>
     <h3>Books:</h3>
@@ -49,7 +53,4 @@
         {% endfor %}
     </ul>
 </div>
-    <a href = "{% url 'listUpdate' list.pk %}">Edit</a>
-    <a href = "{% url 'listDelete' list.pk %}">Delete</a>
-
 {% endblock %}
