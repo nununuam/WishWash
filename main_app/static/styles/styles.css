@@ -1,5 +1,9 @@
+ul {
+    list-style: none;
+}
 a {
     color: #FCEDED;
+    text-decoration: none;
 }
 body {
 
@@ -35,7 +39,11 @@ button {
     color: rgb(77, 30, 30);;
     text-decoration: none;
  }
+ .basebar a:hover{
+     font-weight: bold;
+ }
 .nav_bar h1{
+    text-decoration: none;
     font-weight: bold;
     margin-left: 2%;
     margin-top: 2%;
