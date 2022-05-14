@@ -260,3 +260,35 @@ iframe{
     text-decoration: none;
     color: rgba(255, 213, 213, 0.886);
 }
+.listDetail h1, h3{
+    text-align: center;
+}
+.listDetail h3{
+    padding-bottom: 10px;
+}
+.listDetail a{
+    display: flex;
+    align-items:center;
+}
+.listDetail h5{
+    padding: 0;
+}
+.listDetail h5:hover{
+    text-decoration: none;
+    color: rgba(255, 213, 213, 0.886);
+}
+.listDetail a:hover{
+    text-decoration: none;
+}
+.listDetail li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.listDetail ul{
+    padding: 0;
+}
+.listDetail img{
+    margin: 0 20px 10px 44%;
+    max-width:45px;
+}
