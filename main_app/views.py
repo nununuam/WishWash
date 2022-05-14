@@ -203,12 +203,14 @@ class DetailMoviePage(DetailView):
 class AddBook(LoginRequiredMixin, CreateView):
     template_name = "addbook.html"
     model = Book
-    fields = '__all__'
+    fields = ['title','img','author', 'genre', 'preview','movies', 'plays']
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
+        form.save_m2m()
         return HttpResponseRedirect('/books')
+    
 
 class AddMovie(CreateView):
     # template_name = "addmovie.html"
@@ -235,9 +237,15 @@ class AddPlay(CreateView):
     #     self.object.save()
     #     return HttpResponseRedirect('/broadways')
     model = Play
-    fields = '__all__'
+    fields = ['title', 'img', 'director', 'cast','movies', 'preview']
     template_name = "addplay.html"
-    success_url = '/broadways/'
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        form.save_m2m()
+        return HttpResponseRedirect('/broadways')
+    
 
 class MovieDelete(DeleteView):
     model = Movie
