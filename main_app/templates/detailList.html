@@ -2,11 +2,18 @@
 {% load static %}
 
 {% block content %}
+<style>
+    body{
+        margin: 0;
+    }
+</style>
+<div class ='listDetail'>
     <h1>{{list.name}}</h1>
     <h3>Books:</h3>
     <ul>
         {% for book in list.books.all %}
             <li>
+                <img src = "{{book.img}}"/>
                 <a href="{% url 'detailBook' book.pk %}">
                     <h5>{{book.title}}</h5>
                 </a>
@@ -19,6 +26,7 @@
     <ul>
         {% for movie in list.movies.all %}
             <li>
+                <img src = "{{movie.img}}"/>
                 <a href="{% url 'detailMovie' movie.pk %}">
                     <h5>{{movie.title}}</h5>
                 </a>
@@ -31,6 +39,7 @@
     <ul>
         {% for play in list.plays.all %}
             <li>
+                <img src = "{{play.img}}"/>
                 <a href="{% url 'detailBroadway' play.pk %}">
                     <h5>{{play.title}}</h5>
                 </a>
@@ -39,7 +48,7 @@
             <div>No Play</div>
         {% endfor %}
     </ul>
-
+</div>
     <a href = "{% url 'listUpdate' list.pk %}">Edit</a>
     <a href = "{% url 'listDelete' list.pk %}">Delete</a>
 

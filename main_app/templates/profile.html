@@ -2,13 +2,15 @@
 {% load static %}
 
 {% block content %}
-    <h1>{{user.username}}'s collection: </h1>
+<div class = 'profile'>
+    <h1>{{user.username}}'s save list: </h1>
     {% if username == user.username %}
-        <a href = "{% url 'createList' %}">Create List</a>
+        <a class='createList' href = "{% url 'createList' %}">Create List</a>
     {% endif %}
     {% for list in lists %} 
-        <a href = "{% url 'detailList' list.pk %}"/>
-            <h4>Name: {{list.name}}</h4>
+        <a class='listLink'href = "{% url 'detailList' list.pk %}"/>
+            <h5 class = 'listName'>{{list.name}}</h5>
         </a>
     {% endfor %}
+</div>
 {% endblock %}
