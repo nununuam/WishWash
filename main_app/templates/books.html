@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block content %}
-<h1>Books Page</h1>
+<div class='booksPage'>
+<h1>{{header}}</h1>
 <!-- <script>
         function getBooks(){
             document.getElementById('output').innerHTML = "";
@@ -26,7 +27,6 @@
         <input type='submit' value='Search' />
     </div>
 </form>
-<h2>{{header}}</h2>
 
 <div class="namecards">
     <div class="py-5">
@@ -47,6 +47,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}
