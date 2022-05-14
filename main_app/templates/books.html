@@ -37,7 +37,9 @@
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="{{book.img}}" alt="Card image cap" width ="300" height="300">
                         <div class="card-body">
-                            <p class="card-text">{{book.title}}</p>
+                            <span class="title">
+                                <p class="card-text">{{book.title}}</p>
+                            </span>
                             <p class="card-text">Author: {{book.author}}</p>
                             <a href="{% url 'detailBook' book.pk %}" class="btn btn-primary">view</a>
                         </div>
