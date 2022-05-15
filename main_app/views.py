@@ -37,6 +37,30 @@ class Home(TemplateView):
             context["movies"] = Movie.objects.all()
             context["plays"] = Play.objects.all()
         return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        title = self.request.GET.get("name")
+        if title != None:
+            context["books"] = Book.objects.filter(author__icontains=title)
+            context["movies"] = Movie.objects.filter(cast=title)
+            context["plays"] = Play.objects.filter(cast=title)
+            context['header']=f'Searching for {title}'
+        else:
+            context["books"] = Book.objects.all()
+            context["movies"] = Movie.objects.all()
+            context["plays"] = Play.objects.all()
+        return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        title = self.request.GET.get("name")
+        if title != None:
+            context["books"] = Book.objects.filter(genre__icontains=title)
+            context['header']=f'Searching for {title}'
+        else:
+            context["books"] = Book.objects.all()
+            context["movies"] = Movie.objects.all()
+            context["plays"] = Play.objects.all()
+        return context
 
     #
     #print(response.status_code)
