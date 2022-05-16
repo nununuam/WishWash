@@ -169,6 +169,33 @@ button {
     color:rgb(77, 30, 30);
     border-color: rgb(77, 30, 30);
 }
+/* Log in Page */
+.loginpage {
+    margin: 5% 30% 5% 30%;
+    padding: 10px;
+    background-color:rgb(255, 242, 242);
+    color: rgb(77, 30, 30);
+    border-radius: 5px;
+    text-align: center;
+}
+.loginpage form {
+    text-align: left;
+    margin: 5% 10% 5% 10%;
+}
+.inputlogin {
+    background-color: rgb(77, 30, 30);
+    color:rgb(255, 242, 242);
+    border-color: rgb(77, 30, 30);
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.inputlogin:hover{
+    background-color: rgb(255, 242, 242);
+    color:rgb(77, 30, 30);
+    border-color: rgb(77, 30, 30);
+}
 /* Book Page */
 .booksPage h1, form{
     text-align: center;
