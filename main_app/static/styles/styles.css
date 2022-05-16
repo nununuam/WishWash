@@ -206,7 +206,7 @@ button {
 }
 /* Book Detail */
 .bookImage{
-    max-height: 370px;
+    max-height: 300px;
     float:left;
 }
 .bookDetail{
@@ -268,7 +268,7 @@ h4:before {
 }
 /* Broadways Detail */
 .playImage{
-    max-height: 370px;
+    max-height: 300px;
     float:left;
 }
 .playDetail{
@@ -303,7 +303,7 @@ h4:before {
 }
 /* Movie Detail */
 .movieImage{
-    max-height: 370px;
+    max-height: 300px;
     float:left;
 }
 .movieDetail{
