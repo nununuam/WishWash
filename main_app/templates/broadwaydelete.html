@@ -2,14 +2,13 @@
 {% load static %}
 
 {% block content %}  
-    <h1>Are you sure you want to delete {{play.title}}?</h1>
+<h1>Are you sure you want to delete {{play.title}}?</h1>
     <form method="post">
     {% csrf_token %}
-    <div>
-    <!-- confirm cat delete -->
-        <button>Confirm</button>
-        <!-- Redirect back to detail on cancel -->
-        <a href="{% url 'detailBroadway' play.pk %}">Cancel</a>
-    </div>
+        <div>
+            <button>Confirm</button>
+            <!-- Redirect back to detail on cancel -->
+            <a href="{% url 'detailBroadway' play.pk %}">Cancel</a>
+        </div>
     </form>
 {% endblock %}

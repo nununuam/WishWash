@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>Update {{list.name }}</h1>
-
-<form action = "" method = 'post'>
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type = 'submit' value = 'Submit' />
-</form>
-
+<div class="create">
+    <h1 class="createh1">Update {{list.name }}</h1>
+        <p>
+            * To add or remove multiple items - hold down the shift button when selecting
+        </p>
+        <div class='creatediv'>
+            <form action = "" method = 'post'>
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type = 'submit' class="btn btn-light" value = 'Submit'>Submit</button>
+            </form>
+        </div>
+</div>
 {% endblock %}

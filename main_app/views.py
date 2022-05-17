@@ -1,20 +1,14 @@
-from dataclasses import field
-from logging.handlers import TimedRotatingFileHandler
-from pipes import Template
 from .models import Book, Movie, Play, List
 from .models import List as ListModel
-from django.views import View
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect, response 
+from django.http import HttpResponseRedirect
 from django.views.generic.base import TemplateView
 from django.contrib.auth.models import User
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -167,7 +161,6 @@ class AddPlay(CreateView):
         form.save_m2m()
         return HttpResponseRedirect('/broadways')
     
-
 class MovieDelete(DeleteView):
     model = Movie
     template_name = 'moviedelete.html'
