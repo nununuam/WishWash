@@ -3,12 +3,12 @@
 
 <h1>Are you sure you want to DELETE {{list.name}}?</h1>
 <div class='deleteList'>
-<form method = 'post'>
-    {% csrf_token %}
-    <div>
-        <input class = 'deleteConfirm' type = 'submit' value = 'Confirm'/>
-        <a class = 'deletePost' href = "{% url 'detailList' list.pk %}">Cancel</a>
-    </div>
-</form>
+    <form method = 'post'>
+        {% csrf_token %}
+        <div>
+            <input class = 'deleteConfirm' type = 'submit' value = 'Confirm'/>
+            <a class = 'deletePost' href = "{% url 'detailList' list.pk %}">Cancel</a>
+        </div>
+    </form>
 </div>
 {% endblock %}

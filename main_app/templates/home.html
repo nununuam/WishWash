@@ -28,35 +28,33 @@
     </div>
 </div>
 
-<h1>Movies</h1>
-<div class="card-columns py-3">
-    <div class="container">
-
-        {% for movie in movies %}
-        {% if forloop.counter <= 10 %} <div class="card" style="width: 20rem;">
-            <a href="{% url 'detailMovie' movie.pk %}">
-                <img height="300" width="300" src="{{movie.img}}" class="card-img-top" alt="img">
-            </a>
-    </div>
-    {% endif %}
-    {% endfor %}
-</div>
-</div>
+    <h1>Movies</h1>
+        <div class="card-columns py-3">
+            <div class="container">
+                {% for movie in movies %}
+                {% if forloop.counter <= 10 %} 
+                <div class="card" style="width: 20rem;">
+                    <a href="{% url 'detailMovie' movie.pk %}">
+                        <img height="300" width="300" src="{{movie.img}}" class="card-img-top" alt="img">
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
 
 <h1>Broadways</h1>
-<div class="card-columns py-3">
-    <div class="container">
-
-        {% for play in plays %}
-        {% if forloop.counter <= 10 %} <div class="card" style="width: 20rem;">
-            <a href="{% url 'detailBroadway' play.pk %}">
-                <img height="300" width="300" src="{{play.img}}" class="card-img-top" alt="img">
-            </a>
+    <div class="card-columns py-3">
+        <div class="container">
+            {% for play in plays %}
+            {% if forloop.counter <= 10 %} <div class="card" style="width: 20rem;">
+                <a href="{% url 'detailBroadway' play.pk %}">
+                    <img height="300" width="300" src="{{play.img}}" class="card-img-top" alt="img">
+                </a>
+        </div>
+        {% endif %}
+        {% endfor %}
     </div>
-    {% endif %}
-    {% endfor %}
-
-</div>
 </div>
 </div>
 {%else %}
