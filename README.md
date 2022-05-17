@@ -2,6 +2,16 @@
 
 ## Concept:
   Creating a library of books, movies, and broadways that allows users to be able to search through and see if there are any adaptations of a specific story in different entertainment mediums.
+  
+## Technologies Used: 
+  -CSS
+  -Django
+  -Python
+  -JavaScript
+  -HTML
+
+## App:
+https://amphitheatre.herokuapp.com/
 ## User Stories:
   As a user...
   - views a variety of books, movies and plays.
@@ -28,12 +38,4 @@
 ![Screen Shot 2022-04-30 at 12 23 50 PM](https://user-images.githubusercontent.com/94028875/166119943-ade5102e-84c1-4b58-ad03-66da8a2eba7f.png)
 ![Screen Shot 2022-04-30 at 1 27 45 PM](https://user-images.githubusercontent.com/94028875/166121588-722c9fa7-812a-4211-a043-545d03101225.png)
 
-## Technologies Used: 
--CSS
--Django
--Python
--JavaScript
--HTML
 
-## App:
-https://amphitheatre.herokuapp.com/
