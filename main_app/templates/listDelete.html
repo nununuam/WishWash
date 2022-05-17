@@ -2,6 +2,7 @@
 {% block content %}
 
 <h1>Are you sure you want to DELETE {{list.name}}?</h1>
+<div class='deleteList'>
 <form method = 'post'>
     {% csrf_token %}
     <div>
@@ -9,5 +10,5 @@
         <a class = 'deletePost' href = "{% url 'detailList' list.pk %}">Cancel</a>
     </div>
 </form>
-
+</div>
 {% endblock %}

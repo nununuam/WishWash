@@ -18,12 +18,40 @@ body {
 .creatediv {
     display: inline-block;
     text-align: left;
+    margin: 0 30% 5% 30%;
+    padding: 10px;
+    background-color:rgb(255, 242, 242);
+    color: rgb(77, 30, 30);
+    border-radius: 5px;
+    text-align: center;
+}
+.creatediv form{
+    width:300px;
 }
 .createh1{
     margin-bottom: 30px;
 }
 button {
     background-color: #FCEDED;
+}
+
+.creatediv form {
+    text-align: left;
+    margin: 5% 10% 5% 10%;
+}
+.creatediv button {
+    background-color: rgb(77, 30, 30);
+    color:rgb(255, 242, 242);
+    border-color: rgb(77, 30, 30);
+    position: relative; 
+    left: 40%;
+    transform: translateX(-50%);
+    
+}
+.creatediv button:hover{
+    background-color: rgb(255, 242, 242);
+    color:rgb(77, 30, 30);
+    border-color: rgb(77, 30, 30);
 }
 /* Nav Bar */
 .navbar-custom {
@@ -423,4 +451,54 @@ iframe{
     border-radius: 1px solid rgb(255, 242, 242);
     text-decoration: none;
     border: 1px solid rgb(255, 242, 242);
+}
+/* Delete list */
+/* .deleteList {
+    margin: 5% 30% 5% 30%;
+    padding: 10px;
+    background-color:rgb(255, 242, 242);
+    color: rgb(77, 30, 30);
+    border-radius: 5px;
+    text-align: center;
+} */
+.deleteList form {
+    text-align: left;
+    margin: 5% 10% 5% 10%;
+}
+.deleteConfirm {
+    background-color: rgb(77, 30, 30);
+    color:rgb(255, 242, 242);
+    border-color: rgb(77, 30, 30);
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.deleteConfirm:hover{
+    background-color: rgb(255, 242, 242);
+    color:rgb(77, 30, 30);
+    border-color: rgb(77, 30, 30);
+}
+.deletePost {
+    background-color: rgb(77, 30, 30);
+    color:rgb(255, 242, 242);
+    border-color: rgb(77, 30, 30);
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.deletePost:hover{
+    background-color: rgb(255, 242, 242);
+    padding: 5px;
+    color:rgb(77, 30, 30);
+    border-color: rgb(77, 30, 30);
+    text-decoration: none;
+}
+/* Update list */
+.updatelist h1{
+    text-align: center;
+}
+.updateInfo {
+    text-align: center;
 }
